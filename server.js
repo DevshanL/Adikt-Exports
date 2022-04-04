@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-
+//Import expres package & mongoose package by require
 const app =express();
 
 const PORT = 8000;
@@ -20,3 +20,5 @@ mongoose.connect(DB_URL)
 app.listen(PORT, () =>{
     console.log(`App is running on ${PORT}`);
 });
+
+module.exports = mongoose;
