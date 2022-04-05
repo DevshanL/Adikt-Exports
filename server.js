@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 
 //Import expres package & mongoose package by require
-=======
+
 //coming to server json format, so convert to js format
 const bodyparser = require("body-parser");
 
@@ -14,7 +14,7 @@ const app =express();
 
 const inventoryRoutes = require("./routes/inventories");
 
-//middleware
+//middleware middleware middleware
 app.use(bodyparser.json());
 
 
