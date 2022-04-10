@@ -5,7 +5,15 @@ const bodyParser =require('body-parser');
 const cors =require('cors');
 
 
+//Import expres package & mongoose package by require
+
+//coming to server json format, so convert to js format
+const bodyparser = require("body-parser");
+
+
+
 const app =express();
+
 
 //import routes
 
@@ -24,6 +32,15 @@ app.use(requestRoutes);
 
 
 
+const inventoryRoutes = require("./routes/inventories");
+
+//middleware
+app.use(bodyparser.json());
+
+
+app.use(inventoryRoutes);
+
+
 const PORT = 8000;
 const DB_URL = 'mongodb+srv://adikt:adikt123@adiktdb.baouy.mongodb.net/AdiktExportsDB?retryWrites=true&w=majority';
 
@@ -37,3 +54,6 @@ mongoose.connect(DB_URL)
 app.listen(PORT, () =>{
     console.log(`App is running on ${PORT}`);
 });
+
+
+module.exports = mongoose;
