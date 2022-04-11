@@ -1,7 +1,6 @@
 //Import express package & mongoose package by require
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser =require('body-parser');
 const cors =require('cors');
 
 
@@ -9,8 +8,6 @@ const cors =require('cors');
 
 //coming to server json format, so convert to js format
 const bodyparser = require("body-parser");
-
-
 
 const app =express();
 
@@ -26,6 +23,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //route middleware
+app.use(inventoryRoutes);
+app.use(requestRoutes);//Customer requests
 
 //Customer requests
 app.use(requestRoutes);
