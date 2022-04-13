@@ -12,33 +12,19 @@ const bodyparser = require("body-parser");
 const app =express();
 
 
-//import routes
-
 
 //Customer requests
 const requestRoutes =require('./routes/requests');
-
-//middleware
-app.use(bodyParser.json());
-app.use(cors());
-
-//route middleware
-app.use(inventoryRoutes);
-app.use(requestRoutes);//Customer requests
-
-//Customer requests
-app.use(requestRoutes);
-
-
-
+//inventory
 const inventoryRoutes = require("./routes/inventories");
 
 //middleware
 app.use(bodyparser.json());
+app.use(cors());
 
-
-app.use(inventoryRoutes);
-
+//route middleware
+app.use(inventoryRoutes);//Inventory
+app.use(requestRoutes);//Customer requests
 
 const PORT = 8000;
 const DB_URL = 'mongodb+srv://adikt:adikt123@adiktdb.baouy.mongodb.net/AdiktExportsDB?retryWrites=true&w=majority';
