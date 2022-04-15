@@ -16,6 +16,9 @@ const app =express();
 
 //Customer requests
 const requestRoutes =require('./routes/requests');
+//inventory
+const inventoryRoutes = require("./routes/inventories");
+
 
 //inventory
 const inventoryRoutes = require("./routes/inventories");
@@ -23,7 +26,10 @@ const inventoryRoutes = require("./routes/inventories");
 //qualitycheck
 const qcRoutes = require("./routes/qualitycheck");
 
+
+
 const postedRoutes = require("./routes/posteds");
+
 //middleware
 
 app.use(bodyparser.json());
@@ -32,8 +38,10 @@ app.use(cors());
 //route middleware
 app.use(inventoryRoutes);//Invento
 app.use(requestRoutes);//Customer requests
+
 app.use(qcRoutes); //Quality Check
 app.use(postedRoutes);
+
 
 const PORT = 8000;
 const DB_URL = 'mongodb+srv://adikt:adikt123@adiktdb.baouy.mongodb.net/AdiktExportsDB?retryWrites=true&w=majority';

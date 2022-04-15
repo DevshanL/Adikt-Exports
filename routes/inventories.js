@@ -37,6 +37,23 @@ router.get('/inventory',(req,res) =>{
     });
 });
 
+//get a spesific post
+router.get('/inventory/:id',(req,res) =>{
+    let inventoryid =req.params.id;
+
+    Inventories.findById(inventoryid,(err,inventory) =>{
+        if(err){
+            return res.status(400).json({success:false, err});
+        }
+
+        return res.status(200).json({
+            success:true,
+            inventory
+        });
+
+    });
+});
+
 //update posts
 router.put('/inventory/updateinventory/:id',(req,res)=>{
     Inventories.findByIdAndUpdate(
