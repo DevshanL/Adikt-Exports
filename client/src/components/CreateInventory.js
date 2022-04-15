@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import Swal from 'sweetalert';
+import Swal from 'sweetalert2';
 import './styleSideNav.css';
 import moment from 'moment';
 
@@ -10,7 +10,7 @@ export default class CreateInventory extends Component {
     super(props);
     this.state={
      
-        matName:"",
+       
         cusID:"",
         proName:"",
         stockedDate:"",
@@ -46,7 +46,7 @@ handleInputChange = (e) =>{
 //validation
 validate= ()=>{
 
- let matNameError="";
+ 
  let cusIDError="";
  let proNameError="";
  let stockedDateError="";
@@ -57,9 +57,6 @@ validate= ()=>{
  let descriptionError="";
 
 
- if(!this.state.matName){
-   matNameError="*Material name is Required!"
- }
 
  if(!this.state.cusID){
   cusIDError="*Customer ID is Required!"
@@ -98,8 +95,8 @@ if(!this.state.description){
    descriptionError="Description is Required"
  }
 
- if(matNameError||cusIDError||proNameError||stockedDateError||scheduledDateError||categoryError||qtyError||priceError||descriptionError){
-  this.setState({matNameError,cusIDError,proNameError,stockedDateError,scheduledDateError,categoryError,qtyError,priceError,descriptionError});
+ if(cusIDError||proNameError||stockedDateError||scheduledDateError||categoryError||qtyError||priceError||descriptionError){
+  this.setState({cusIDError,proNameError,stockedDateError,scheduledDateError,categoryError,qtyError,priceError,descriptionError});
   return false;
 
  }  
@@ -112,11 +109,11 @@ return true;
 onSubmit =(e) =>{
     e.preventDefault();
     const isValid= this.validate();
-    const {matName,cusID,proName,stockedDate,scheduledDate,category,qty,price,description} = this.state;
+    const {cusID,proName,stockedDate,scheduledDate,category,qty,price,description} = this.state;
 
     const data = {
        
-        matName:matName,
+    
         cusID:cusID,
         proName:proName,
         stockedDate:stockedDate,
@@ -139,7 +136,7 @@ onSubmit =(e) =>{
             this.setState(
                 {
                  
-                 matName:"",
+                
                  cusID:"",
                  proName:"",
                  stockedDate:"",
@@ -160,11 +157,11 @@ onSubmit =(e) =>{
 btnDemo = (e) => {
 e.preventDefault();
 
-const {matName, cusID, proName, stockedDate, scheduledDate, category, qty, price, description} = this.state;
+const { cusID, proName, stockedDate, scheduledDate, category, qty, price, description} = this.state;
 
 const data = {
 
-matName: matName,
+
 cusID: cusID,
 proName: proName,
 stockedDate: stockedDate,
@@ -180,7 +177,7 @@ console.log(data)
 this.setState(
 {
  // matID: "MAT003",
- matName: "Cashmere",
+
  cusID: "SUP002",
  proName: "Xiong",
  stockedDate: "11/10/2021",
@@ -192,29 +189,65 @@ this.setState(
 }
 )
 }
+//Demo button
+btnClear = (e) => {
+  e.preventDefault();
+  
+  const { cusID, proName, stockedDate, scheduledDate, category, qty, price, description} = this.state;
+  
+  const data = {
+  
+  
+  cusID: cusID,
+  proName: proName,
+  stockedDate: stockedDate,
+  scheduledDate: scheduledDate,
+  category: category,
+  qty: qty,
+  price: price,
+  description: description,
+  }
+  
+  console.log(data)
+  
+  this.setState(
+  {
+   // matID: "MAT003",
+  
+   cusID: "",
+   proName: "",
+   stockedDate: "",
+   scheduledDate: "",
+   category: "",
+   qty: "",
+   price: "",
+   description: "",
+  }
+  )
+  }
   render() {
     return (
      //component organizer
      <div id="wrapper" className="toggled">
-     <div id="page-content-wrapper">
+     <div   style={{ backgroundColor: "#e3dac9" }} id="page-content-wrapper">
      <div className="container-fluid">
 
 
        {/* custom navigation        */}
-       <nav class="navbar navbar-expand-lg navbar-dark bg-dark  rounded-3">
+       <nav class="navbar navbar-expand-lg  rounded-3"  style={{ backgroundColor: "#006a4e" }}>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarNav">
 <ul class="navbar-nav">
 <li class="nav-item active">
- <a class="nav-link" href="">Dashboard </a>
+ <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="">Dashboard </a>
 </li>
 <li class="nav-item">
- <a class="nav-link" href=""> &#62;Material Card</a>
+ <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/"> &#62;Inventory Cards</a>
 </li>
 <li class="nav-item">
- <a class="nav-link" href=""> &#62; Add a Material Card <span class="sr-only">(current)</span> </a>
+ <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/intadd"> &#62; Add a Inventory Card <span class="sr-only">(current)</span> </a>
 </li>
 </ul>
 </div>
@@ -241,10 +274,10 @@ this.setState(
 
 
 {/* Title        */}
-<div class="p-3 mb-2 bg-info text-dark  rounded-3">
+<div class="p-3 mb-2 text-dark  rounded-3"  style={{ backgroundColor: "#faf0e6" }}>
      <div className="col-md-8 mt-4 mx-auto">
        <center>
-     <h1 className="h3 mb-3 font-weight-normal text-info rounded-3 " style={{backgroundColor: "#0E3662" , padding: "10px"}}><b>ADD NEW MATERIAL</b></h1>
+     <h1 className="h3 mb-3 font-weight-normal text-info rounded-3 " style={{backgroundColor: "#0E3662" , padding: "10px"}}><b>ADD NEW INVENTORY CARD</b></h1>
       </center>
 
       <hr/>
@@ -256,27 +289,7 @@ this.setState(
              
 
          
-             <div class="row">
-
-
-
-
-<div class="col">
-<label  style={{marginBottom:'5px'}} >Material Name</label>
-<input type="text" class="form-control" name="matName"  placeholder="Enter Material Name"
-value={this.state.matName}
-onChange={this.handleInputChange}
-required
-/>
-
-<div style={{fontSize:15 ,color:"red"}}>
-                    {this.state.matNameError}
-            </div>
-</div>
-
-
-
-</div>
+             
 
 
 <div class="row">
@@ -320,7 +333,7 @@ max={moment().format("YYYY-MM-DD")}
 required
 />
 <div style={{fontSize:15 ,color:"red"}}>
-                    {this.state.stockedDate}
+                    {this.state.stockedDateError}
             </div>
 </div>
 
@@ -340,11 +353,11 @@ required
 <input type="date" class="form-control" name="scheduledDate" placeholder="Enter Scheduled Date"
 value={this.state.scheduledDate}
 onChange={this.handleInputChange}
-max={moment().format("YYYY-MM-DD")}
+min={moment().format("YYYY-MM-DD")}
 required
 />
 <div style={{fontSize:15 ,color:"red"}}>
-                    {this.state.scheduledDate}
+                    {this.state.scheduledDateError}
             </div>
 </div>
 
@@ -428,7 +441,10 @@ required
                  </button>
                  <br/>
                  <br/>
-                 <button type="submit" className="btn btn-dark"  style={{ backgroundColor: "#2D5F97"}}  onClick={this.btnDemo}>DEMO</button>
+                 <button type="submit" className="btn btn-dark"  style={{ backgroundColor: "#2D5F97"}}  onClick={this.btnDemo}>Demo</button>
+                 &nbsp;
+                 &nbsp;
+                 <button type="submit" className="btn btn-dark"  style={{ backgroundColor: "#2D5F97"}}  onClick={this.btnClear}>Clear</button>
                  </div>
              </form>  
             
@@ -437,6 +453,69 @@ required
              </div>
              </div>
              </div> 
+
+               {/* Footer Section */}
+       <div class="footer">
+
+
+<div class="contain">
+
+  <br/>
+<div class="col">
+  <h1>ABOUT US</h1>
+
+  
+  <ul>
+ 
+    <li><i class="fas fa-phone-square"></i>&nbsp; &nbsp; Contact us</li>
+    <li><i class="fas fa-comment-alt"></i>&nbsp; &nbsp;Suggestion</li>
+    
+  </ul>
+  
+  
+</div>
+<div class="col">
+  <h1></h1>
+  <ul>
+    <li></li>
+  </ul>
+</div>
+<div class="col">
+<div class="position-absolute top-50 start-50 translate-middle">
+<br/>
+
+<img src="%PUBLIC_URL%../../white.png" class="rounded-circle" width="40" height="40"  alt=""/>
+  <h1>CASANOVA</h1>
+  
+  <ul>
+    <li>@ Copyright reserved</li>
+  </ul>
+  </div>
+</div>
+<div class="col">
+  <h1></h1>
+  <ul>
+  </ul>
+  </div>
+
+  <div class="position-absolute top-50 end-0 translate-middle-y">
+<div class="col social">
+  <h1>Help</h1>
+  
+  <ul>
+  
+    <li><i class="fas fa-envelope"></i>&nbsp; &nbsp; <i class="fas fa-map-marker-alt"></i>&nbsp; &nbsp;<i class="fas fa-star"></i></li>
+    
+  </ul>
+  
+  </div>
+</div>
+<div class="clearfix">
+
+
+</div>
+</div>
+</div>
              </div> 
 
     )
