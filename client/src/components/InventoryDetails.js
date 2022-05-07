@@ -30,11 +30,11 @@ componentDidMount(){
 
     const id =this.props.match.params.id;
 
-    const{matName,cusID,proName,stockedDate,category,qty,price,description} = this.state.inventory;
+    const{cusID,proName,stockedDate,scheduledDate,category,qty,price,description} = this.state.inventory;
     return (
        //component organizer
-       <div id="wrapper" className="toggled">
-       <div id="page-content-wrapper">
+       <div  style={{ backgroundColor: "#e3dac9" }} id="wrapper" className="toggled">
+       <div  id="page-content-wrapper">
        <div className="container-fluid">
 
        <nav class="navbar navbar-expand-lg   rounded-3"  style={{ backgroundColor: "#006a4e" }}>
@@ -44,17 +44,20 @@ componentDidMount(){
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/matDash">Dashboard </a>
+        <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="">Dashboard </a>
       </li>
       <li class="nav-item">
-        <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/matRet"> &#62;Material Card</a>
+        <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/"> &#62;Inventory Cards</a>
       </li>
       <li class="nav-item">
-        <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href=""> &#62; Material MaterialDetails <span class="sr-only">(current)</span> </a>
+        <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href=""> &#62;Inventory Card Details <span class="sr-only">(current)</span> </a>
       </li>
     </ul>
   </div>
 </nav> 
+<hr/> 
+
+<div style={{ backgroundColor: "#faf0e6" }}>
     
       <div class="card-body">
       
@@ -63,33 +66,35 @@ componentDidMount(){
     
             <div style={{marginTop:'20px'}}>
             
-            <h4>  <i class="fas fa-angle-double-up"></i> &nbsp; {`MAT${id.substr(0,5)}`}</h4>
+            <h4>  <i class="fas fa-angle-double-up"></i> &nbsp; {`INT${id.substr(0,5)}`}</h4>
             <hr/>
             
             <dl className="row ">
-                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Material Name</b></dt>
-                <dd className="col-sm-9">{matName}</dd>
-
-                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Suplier ID</b></dt>
+                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Customer ID</b></dt>
                 <dd className="col-sm-9">{cusID}</dd>
 
-                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Supplier Name</b></dt>
+                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Product Name</b></dt>
                 <dd className="col-sm-9">{proName}</dd>
 
-                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Arrival Date</b></dt>
+                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Stocked Date</b></dt>
                 <dd className="col-sm-9">{stockedDate}</dd>
 
-                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Shipment ID</b></dt>
-                <dd className="col-sm-9">{category}</dd>
-
-                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Price</b></dt>
-                <dd className="col-sm-9">{qty}</dd>
-
-                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Qty</b></dt>
-                <dd className="col-sm-9">{price}</dd>
+                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Scheduled Date</b></dt>
+                <dd className="col-sm-9">{scheduledDate}</dd>
 
                 <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Category</b></dt>
+                <dd className="col-sm-9">{category}</dd>
+
+                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Qty</b></dt>
+                <dd className="col-sm-9">{qty}</dd>
+
+                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Price</b></dt>
+                <dd className="col-sm-9">{price}</dd>
+
+                <dt className="col-sm-3"><i class="fas fa-circle"></i><b> &nbsp;Description</b></dt>
                 <dd className="col-sm-9">{description}</dd>
+
+                
 
                 
 
@@ -97,8 +102,22 @@ componentDidMount(){
             
         </div>
         </div>
-        
         </div>
+        {/* Instruction section */}
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">INSTRUCTIONS</h5>
+
+<div class="spinner-grow text-info" role="status">
+<span class="visually-hidden">Loading...</span>
+</div>
+<p class="card-text">Imagine having just the right number of products for a certain SKU, given demand -- but your team is working with old data and, based on that data, projects that your inventory will fall short of demand in a month. It is obvious what your team would do: begin the process of acquiring more inventory to make up the difference. Now there will be excess inventory, and you will be in an Overstock situation.</p>
+<p class="card-text"><small class="text-muted">Latest Regulations</small></p>
+</div>
+
+</div>
+        </div>
+        
         </div>
         <br/>
         <br/>
@@ -147,7 +166,7 @@ componentDidMount(){
 <div class="position-absolute top-50 start-50 translate-middle">
 <br/>
 
-<img src="%PUBLIC_URL%../../white.jpg" class="rounded-circle" width="40" height="40"  alt=""/>
+<img src="%PUBLIC_URL%../../white.png" class="rounded-circle" width="40" height="40"  alt=""/>
   <h1>CASANOVA</h1>
   
   <ul>

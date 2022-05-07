@@ -18,12 +18,18 @@ const requestRoutes =require('./routes/requests');
 //inventory
 const inventoryRoutes = require("./routes/inventories");
 
+//production
+const productionRoutes = require("./routes/productions");
+
 //middleware
 app.use(bodyparser.json());
 app.use(cors());
 
 //route middleware
 app.use(inventoryRoutes);//Inventory
+
+app.use(productionRoutes);//Production
+
 app.use(requestRoutes);//Customer requests
 
 const PORT = 8000;

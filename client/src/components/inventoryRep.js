@@ -113,8 +113,10 @@ filterData(inventory,searchKey){
         </ul>
       </div>
         </nav> 
-    
-    
+        <hr/>
+        <center>
+     <h1 className="h3 mb-3 font-weight-normal text-info rounded-3 " style={{backgroundColor: "#0E3662" , padding: "10px"}}><b>REPORTS</b></h1>
+      </center>
     
     
     <hr/>
@@ -142,12 +144,7 @@ filterData(inventory,searchKey){
   </label>
 </div>
 
-          <div class="form-check" >
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="apparel" onChange={this.handleSearchArea} />
-  <label class="form-check-label" for="exampleRadios1">
-  APPAREL & TEXTILES
-  </label>
-</div>
+          
 <div class="form-check">
   <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="tea" onChange={this.handleSearchArea}/>
   <label class="form-check-label" for="exampleRadios2">

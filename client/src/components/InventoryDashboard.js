@@ -101,6 +101,7 @@ handleSearchArea = (e) =>{
 <center>
      <h1 className="h3 mb-3 font-weight-normal text-info rounded-3 " style={{backgroundColor: "#0E3662" , padding: "10px"}}><b>INVENTORY</b></h1>
       </center>
+      <hr/>
       <center>
         <div  className="col-lg-3 mt-2 mb-2">
           {/* Searchbar */}
@@ -125,12 +126,6 @@ handleSearchArea = (e) =>{
   </label>
 </div>
 
-          <div class="form-check" >
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="apparel" onChange={this.handleSearchArea} />
-  <label class="form-check-label" for="exampleRadios1">
-  APPAREL & TEXTILES
-  </label>
-</div>
 <div class="form-check">
   <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="tea" onChange={this.handleSearchArea}/>
   <label class="form-check-label" for="exampleRadios2">
@@ -158,7 +153,7 @@ handleSearchArea = (e) =>{
           <br/>
           <br/>
          <div style={{ backgroundColor: "#faf0e6" }}>
-          <table class="table" >
+          <table className ="table table-hover" >
           <thead>
               <tr>
                   <th scope="col">#</th>
@@ -169,7 +164,7 @@ handleSearchArea = (e) =>{
                   <th scope="col">Stocked Date</th>
                   <th scope="col">Scheduled Date</th>
                   <th scope="col">Category</th>
-                  <th scope="col">Qty</th>
+                  <th scope="col">Qty Kg.</th>
                   <th scope="col">Price</th>
                   
                   <th scope='col'>Action</th>

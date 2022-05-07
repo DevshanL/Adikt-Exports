@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './styleSideNav.css';
 import Swal from 'sweetalert2';
+import moment from 'moment';
 
 export default class EditInventory extends Component {
 
@@ -199,6 +200,20 @@ export default class EditInventory extends Component {
 
 <hr/>
 
+{/* Instruction section */}
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">INSTRUCTIONS</h5>
+
+<div class="spinner-grow text-info" role="status">
+<span class="visually-hidden">Loading...</span>
+</div>
+<p class="card-text">Imagine having just the right number of products for a certain SKU, given demand -- but your team is working with old data and, based on that data, projects that your inventory will fall short of demand in a month. It is obvious what your team would do: begin the process of acquiring more inventory to make up the difference. Now there will be excess inventory, and you will be in an Overstock situation.</p>
+<p class="card-text"><small class="text-muted">Latest Regulations</small></p>
+</div>
+
+</div>
+
 {/* Title        */}
 <div class="p-3 mb-2  text-dark rounded-3" style={{ backgroundColor: "#faf0e6" }}>
         <div className="col-md-8 mt-4 mx-auto">
@@ -262,7 +277,7 @@ required
 <div class="row">
 <div class="col">
 <label style={{marginBottom:'5px'}} >Stocked Date</label>
-<input type="dste" class="form-control" name="stockedDate" placeholder="Enter Stocked Date"
+<input type="date" class="form-control" name="stockedDate" placeholder="Enter Stocked Date"
 value={this.state.stockedDate}
 readOnly
 onChange={this.handleInputChange}
@@ -275,10 +290,10 @@ required
 
 <div class="col">
 <label style={{marginBottom:'5px'}} >Scheduled Date</label>
-<input type="dste" class="form-control" name="scheduledDate" placeholder="Enter Scheduled Date"
+<input type="date" class="form-control" name="scheduledDate" placeholder="Enter Scheduled Date"
 value={this.state.scheduledDate}
-
 onChange={this.handleInputChange}
+min={moment().format("YYYY-MM-DD")}
 required
 />
 <div style={{fontSize:15 ,color:"red"}}>
