@@ -28,21 +28,24 @@ export default class HomePosted extends Component {
     });
   }
   //filter data
-  filterData(exportDetails, searchKey) {
+   filterData(exportDetails, searchKey) {
+   
     const result = exportDetails.filter(
       (exportDetails) =>
         exportDetails.ProductID.toLowerCase().includes(searchKey) ||
         exportDetails.ShipmentID.toLowerCase().includes(searchKey)
     );
+    console.log(result)
     this.setState({ exportDetails: result });
   }
   //Search function
   handleSearchArea = (e) => {
     const searchKey = e.currentTarget.value;
 
-    axios.get("http://localhost:8000/export-details").then((res) => {
+    axios.get("http://localhost:8000/export-details").then( (res) => {
       if (res.data.success) {
-        this.filterData(res.data.existingexportDetails, searchKey);
+        
+         this.filterData(res.data.existingExportDetails, searchKey);
       }
     });
   };
