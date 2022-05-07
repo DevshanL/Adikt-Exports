@@ -21,6 +21,7 @@ import CreatePostbr from "./components/CreatePostbr";
 import EditPostbr from "./components/EditPostbr";
 import HomePostbr from "./components/HomePostbr";
 import PostbrDetails from "./components/PostbrDetails";
+import exportDetailsRep from './components/exportDetailsRep';
 
 
 export default class App extends Component {
@@ -55,6 +56,8 @@ export default class App extends Component {
        <Route path="/addPostbr" component={CreatePostbr}></Route>
        <Route path="/editPostbr/:id" component={EditPostbr}></Route>
        <Route path="/postPostbrDetails/:id" component={PostbrDetails}></Route>
+       <Route path="/exportDeatialRep" component={exportDetailsRep}></Route>
+
        </div>
       </BrowserRouter>
     )
