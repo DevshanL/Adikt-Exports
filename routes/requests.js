@@ -28,10 +28,22 @@ router.get('/requests' ,(req,res) =>{
         }
         return res.status(200).json({
             success:true,
-            existingposts:requests
+            existingRequests:requests
         });
     });
 });
+
+//get a specific request
+router.get('/request/:id',(req,res)=>{
+    let requestId =req.params.id;
+    Requests.findById(requestId, (err,request) =>{
+        if(err){
+            return res.status(400).json({success:false, err})
+        }
+        return res.status(200).json({success:true, request})
+    });
+});
+
 
 //update requests
 router.put('/request/update/:id' ,(req,res) =>{
