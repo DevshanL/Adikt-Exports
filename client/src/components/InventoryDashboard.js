@@ -83,10 +83,10 @@ handleSearchArea = (e) =>{
   <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
        <li class="nav-item active">
-         <a   style={{textDecoration:'none',color:'white'}} class="nav-link" href="">Dashboard</a>
+         <a   style={{textDecoration:'none',color:'white'}} class="nav-link" href="/">Dashboard</a>
        </li>
       <li class="nav-item">
-        <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/"> &#62; Inventory Cards  <span class="sr-only">(current)</span> </a>
+        <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/intdash"> &#62; Inventory Cards  <span class="sr-only">(current)</span> </a>
       </li>
    
     </ul>
