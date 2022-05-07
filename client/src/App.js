@@ -17,6 +17,10 @@ import CreatePosted from "./components/CreatePosted";
 import EditPosted from "./components/EditPosted";
 import HomePosted from "./components/HomePosted";
 import PostedDetails from "./components/PostedDetails";
+import CreatePostbr from "./components/CreatePostbr";
+import EditPostbr from "./components/EditPostbr";
+import HomePostbr from "./components/HomePostbr";
+import PostbrDetails from "./components/PostbrDetails";
 
 
 export default class App extends Component {
@@ -43,10 +47,14 @@ export default class App extends Component {
        <Route path="/propost/:id" exact component={ProductionDetails}></Route>
        <Route path="/prorep" exact component={ProductionRep}></Route>
        <Route path="/admin" exact component={Admin}></Route>
-       <Route path="/" exact component={HomePosted}></Route>
+       <Route path="/expDash" exact component={HomePosted}></Route>
        <Route path="/add" component={CreatePosted}></Route>
        <Route path="/edit/:id" component={EditPosted}></Route>
        <Route path="/post/:id" component={PostedDetails}></Route>
+       <Route path="/buyerReg" exact component={HomePostbr}></Route>
+       <Route path="/addPostbr" component={CreatePostbr}></Route>
+       <Route path="/editPostbr/:id" component={EditPostbr}></Route>
+       <Route path="/postPostbrDetails/:id" component={PostbrDetails}></Route>
        </div>
       </BrowserRouter>
     )
