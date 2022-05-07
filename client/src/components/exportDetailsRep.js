@@ -185,7 +185,7 @@ filterData(exportDetails,searchKey){
         type="button"
         style={{ backgroundColor: "#00000", padding: "7px" }}
         class="btn btn-info btn-sm"
-        onClick={() => generatePDF(this.state.production)}
+        onClick={() => generatePDF(this.state.exportDetails)}
       >
         Download As PDF
       </button>
