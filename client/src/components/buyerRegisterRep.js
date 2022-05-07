@@ -135,36 +135,7 @@ filterData(buyerRegister,searchKey){
           
           </div>
           </center>
-          {/* Filter Category */}
-<div className="p-3 mb-2 text-light rounded-3" style={{ backgroundColor: "#0E3662" }} >
-          <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="" onChange={this.handleSearchArea}/>
-  <label class="form-check-label" for="exampleRadios2">
-    ALL
-  </label>
-</div>
-
-          
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="tea" onChange={this.handleSearchArea}/>
-  <label class="form-check-label" for="exampleRadios2">
-  TEA
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="coconut" onChange={this.handleSearchArea}/>
-  <label class="form-check-label" for="exampleRadios3">
-  COCONUT BASED PRODUCTS
-  </label>
-  
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="spices" onChange={this.handleSearchArea}/>
-  <label class="form-check-label" for="exampleRadios3">
-  SPICES
-  </label>
-</div>
-</div>
+         
         
           
      
