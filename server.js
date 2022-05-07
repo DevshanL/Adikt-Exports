@@ -2,21 +2,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors =require('cors');
-
-
-//Import expres package & mongoose package by require
-
 //coming to server json format, so convert to js format
-const bodyparser = require("body-parser");
+const bodyParser = require("body-parser");
 
 const app =express();
 
 
 //import routes
-
-
-//Customer requests
-const requestRoutes =require('./routes/requests');
+const inventoryRoutes = require("./routes/inventories");
+const requestRoutes =require('./routes/requests');//Customer requests
 
 //middleware
 app.use(bodyParser.json());
@@ -25,19 +19,6 @@ app.use(cors());
 //route middleware
 app.use(inventoryRoutes);
 app.use(requestRoutes);//Customer requests
-
-//Customer requests
-app.use(requestRoutes);
-
-
-
-const inventoryRoutes = require("./routes/inventories");
-
-//middleware
-app.use(bodyparser.json());
-
-
-app.use(inventoryRoutes);
 
 
 const PORT = 8000;
