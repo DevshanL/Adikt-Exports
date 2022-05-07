@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import './styleSideNav.css';
-import moment from 'moment';
+
 
 export default class ProductionCreate extends Component {
 
@@ -53,14 +53,14 @@ validate= ()=>{
 
 
  if(!this.state.slotName){
-    slotNameeError="*Customer ID is Required!"
+    slotNameeError="*Slot Name is Required!"
  }
  if(!this.state.slotLocation){
-    slotLocationError="*Product name is Required"
+    slotLocationError="*Slot Location is Required"
  }
 
  if(!this.state.slotManager){
-    slotManagerError="*Stocked date is Required"
+    slotManagerError="*Slot Manager  is Required"
  }
 if(!this.state.capacity){
     capacityError="*Scheduled date is Required"
@@ -263,28 +263,28 @@ btnClear = (e) => {
 
 <div class="row">
 <div class="col">
-<label style={{marginBottom:'5px'}} >SLOT ID</label>
-<input type="text" class="form-control" maxlength="6" name="slotID" placeholder="Enter Customer ID"
-value={this.state.slotID}
+<label style={{marginBottom:'5px'}} >Slot Name</label>
+<input type="text" class="form-control" name="slotName" placeholder="Enter Slot Name"
+value={this.state.slotName}
 onChange={this.handleInputChange}
 required
 />
 <div style={{fontSize:15 ,color:"red"}}>
-                    {this.state.slotIDError}
+                    {this.state.slotNameeError}
             </div>
 </div>
 
 
 
 <div class="col">
-<label style={{marginBottom:'5px'}} >Product Name</label>
-<input type="text" class="form-control" name="slotID"  placeholder="Enter Product Name"
-value={this.state.proName}
+<label style={{marginBottom:'5px'}} > Slot Location</label>
+<input type="text" class="form-control" name="slotLocation"  placeholder="Enter Slot Location"
+value={this.state.slotLocation}
 onChange={this.handleInputChange}
 required
 />
 <div style={{fontSize:15 ,color:"red"}}>
-                    {this.state.proNameError}
+                    {this.state.slotLocationError}
             </div>
 </div>
 
@@ -294,15 +294,15 @@ required
 
 <div class="row">
 <div class="col">
-<label style={{marginBottom:'5px'}} >Stocked Date</label>
-<input type="date" class="form-control" name="stockedDate" placeholder="Enter Stocked Date"
-value={this.state.stockedDate}
+<label style={{marginBottom:'5px'}} >Slot Manager</label>
+<input type="text" class="form-control" name="slotManager" placeholder="Enter Slot Manager Name"
+value={this.state.slotManager}
 onChange={this.handleInputChange}
-max={moment().format("YYYY-MM-DD")}
+
 required
 />
 <div style={{fontSize:15 ,color:"red"}}>
-                    {this.state.stockedDateError}
+                    {this.state.slotManagerError}
             </div>
 </div>
 
@@ -318,15 +318,15 @@ required
 
 <div class="row">
 <div class="col">
-<label style={{marginBottom:'5px'}} >Scheduled Date</label>
-<input type="date" class="form-control" name="scheduledDate" placeholder="Enter Scheduled Date"
-value={this.state.scheduledDate}
+<label style={{marginBottom:'5px'}} >Capacity</label>
+<input type="number" class="form-control" name="capacity" placeholder="Enter Capacity"
+value={this.state.capacity}
 onChange={this.handleInputChange}
-min={moment().format("YYYY-MM-DD")}
+
 required
 />
 <div style={{fontSize:15 ,color:"red"}}>
-                    {this.state.scheduledDateError}
+                    {this.state.capacityError}
             </div>
 </div>
 
@@ -350,42 +350,9 @@ required
             </div>
                  </div>
 
-                 <div class="col">
-<label style={{marginBottom:'5px'}} >Qty</label>
-<input type="number" min="0" class="form-control" name="qty" placeholder="Enter Qty (Kg)"
-value={this.state.qty}
-onChange={this.handleInputChange}
-required
-/>
-<div style={{fontSize:15 ,color:"red"}}>
-                    {this.state.qtyError}
-            </div>
-</div>
+         
 
-
-
-
-<div class="row">
-<div class="col">
-<label style={{marginBottom:'5px'}} >Price (Rs.)</label>
-<input   type="number" min="0.00" max="1000000.00" step="0.01"   class="form-control" name="price" placeholder="Enter Price"
-value={this.state.price}
-onChange={this.handleInputChange}
-required
-/>
-<div style={{fontSize:15 ,color:"red"}}>
-                    {this.state.priceError}
-            </div>
-</div>
-
-</div>
-
-                 
-
-
-                 
-
-                 <div className="form-group" style={{marginBottom:'15px'}}>
+ <div className="form-group" style={{marginBottom:'15px'}}>
                  <label style={{marginBottom:'5px'}} >Description</label>
                  <textarea 
                  className="form-control"
@@ -406,7 +373,7 @@ required
              <div>
                  <button className="btn btn-success" type="submit" style={{ backgroundColor: "#0E3662" }} onClick={this.onSubmit}>
                      <i className="far fa-check-square"></i>
-                     &nbsp; Add Inventory Card
+                     &nbsp; Add Slot Card
                  </button>
                  <br/>
                  <br/>
