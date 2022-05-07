@@ -1,24 +1,39 @@
 //Import express package & mongoose package by require
 const express = require('express');
 const mongoose = require('mongoose');
+
 const cors =require('cors');
 //coming to server json format, so convert to js format
-const bodyParser = require("body-parser");
+const bodyparser = require("body-parser");
 
 const app =express();
 
 
-//import routes
+
+//Customer requests
+const requestRoutes =require('./routes/requests');
+
+//inventory
 const inventoryRoutes = require("./routes/inventories");
-const requestRoutes =require('./routes/requests');//Customer requests
+
+//qualitycheck
+const qcRoutes = require("./routes/qualitycheck");
+
+
+
+const postedRoutes = require("./routes/posteds");
 
 //middleware
-app.use(bodyParser.json());
+
+app.use(bodyparser.json());
 app.use(cors());
 
 //route middleware
-app.use(inventoryRoutes);
+app.use(inventoryRoutes);//Invento
 app.use(requestRoutes);//Customer requests
+
+app.use(qcRoutes); //Quality Check
+app.use(postedRoutes);
 
 
 const PORT = 8000;
