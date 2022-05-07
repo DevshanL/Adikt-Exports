@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { BrowserRouter, Route } from "react-router-dom";
+
 import NavBar from './components/NavBar';
 import InventoryDashboard from './components/InventoryDashboard';
 import CreateInventory from './components/CreateInventory';
@@ -13,6 +14,12 @@ import ProductionDetails from './components/ProductionDetails';
 import ProductionRep from './components/ProductionRep';
 import Home from './components/Home';
 
+
+import CreateRequest from './components/CreateRequest';
+import EditRequest from './components/EditRequest';
+import RequestDetails from './components/RequestDetails';
+import RequestList from './components/RequestList.js';
+import RequestNavbar from './components/RequestNavbar';
 
 
 export default class App extends Component {
@@ -44,6 +51,12 @@ export default class App extends Component {
 
 
        
+
+       <RequestNavbar/>
+       <Route path="/" exact component={RequestList}></Route>
+       <Route path="/add" component={CreateRequest}></Route>
+       <Route path="/edit/:id" component={EditRequest}></Route>
+       <Route path="/request/:id" component={RequestDetails}></Route>
 
        </div>
       </BrowserRouter>
