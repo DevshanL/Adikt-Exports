@@ -22,6 +22,7 @@ import EditPostbr from "./components/EditPostbr";
 import HomePostbr from "./components/HomePostbr";
 import PostbrDetails from "./components/PostbrDetails";
 import exportDetailsRep from './components/exportDetailsRep';
+import buyerRegisterRep from './components/buyerRegisterRep';
 
 
 export default class App extends Component {
@@ -52,11 +53,12 @@ export default class App extends Component {
        <Route path="/add" component={CreatePosted}></Route>
        <Route path="/edit/:id" component={EditPosted}></Route>
        <Route path="/post/:id" component={PostedDetails}></Route>
+       <Route path="/exportDeatialRep" component={exportDetailsRep}></Route>
        <Route path="/buyerReg" exact component={HomePostbr}></Route>
        <Route path="/addPostbr" component={CreatePostbr}></Route>
        <Route path="/editPostbr/:id" component={EditPostbr}></Route>
        <Route path="/postPostbrDetails/:id" component={PostbrDetails}></Route>
-       <Route path="/exportDeatialRep" component={exportDetailsRep}></Route>
+       <Route path="/buyerRegisterRep" component={buyerRegisterRep}></Route>
 
        </div>
       </BrowserRouter>
