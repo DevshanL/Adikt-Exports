@@ -165,10 +165,10 @@ export default class ProductionEdit extends Component {
 <div class="collapse navbar-collapse" id="navbarNav">
 <ul class="navbar-nav">
   <li class="nav-item active">
-    <a style={{textDecoration:'none',color:'white'}} class="nav-link" href="">Dashboard </a>
+    <a style={{textDecoration:'none',color:'white'}} class="nav-link" href="/">Dashboard </a>
   </li>
   <li class="nav-item">
-    <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/"> &#62;Slot Cards</a>
+    <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/prodash"> &#62;Slot Cards</a>
   </li>
   <li class="nav-item">
     <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href=""> &#62; Update Slot Card <span class="sr-only">(current)</span> </a>

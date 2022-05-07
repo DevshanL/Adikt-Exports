@@ -210,13 +210,13 @@ btnClear = (e) => {
 <div class="collapse navbar-collapse" id="navbarNav">
 <ul class="navbar-nav">
 <li class="nav-item active">
- <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="">Dashboard </a>
+ <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/">Dashboard </a>
 </li>
 <li class="nav-item">
- <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/pro"> &#62;Production Slots Cards</a>
+ <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/prodash"> &#62;Production Slots Cards</a>
 </li>
 <li class="nav-item">
- <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/proadd"> &#62; Add a Production Slot Card <span class="sr-only">(current)</span> </a>
+ <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/procreate"> &#62; Add a Production Slot Card <span class="sr-only">(current)</span> </a>
 </li>
 </ul>
 </div>

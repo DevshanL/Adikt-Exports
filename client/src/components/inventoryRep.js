@@ -103,7 +103,7 @@ filterData(inventory,searchKey){
       <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
           <li class="nav-item active">
-             <a   style={{textDecoration:'none',color:'white'}} class="nav-link" href="">Dashboard</a>
+             <a   style={{textDecoration:'none',color:'white'}} class="nav-link" href="/">Dashboard</a>
            </li>
            <li class="nav-item">
              <a   style={{textDecoration:'none',color:'white'}} class="nav-link" href="/intrep">Reports</a>

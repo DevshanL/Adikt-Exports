@@ -32,8 +32,8 @@ class NavBar extends Component {
                         &nbsp;
                           Inventory Management
                         <div className="dropdown-content">
-                        <a href="/matDash">Inventory Dashboard</a>
-                        <a href="/">Inventory Card</a>
+                        <a href="/intdash">Inventory Dashboard</a>
+                        
                          <a href="/intrep">Reports</a>
                         
                     </div>
@@ -85,7 +85,7 @@ class NavBar extends Component {
                 <hr/>
                 
                 <li>
-                    <a href="#">
+                    <a href="/admin">
                       
                     <i class="fas fa-users-cog"></i>
                     &nbsp;
