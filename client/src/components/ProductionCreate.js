@@ -4,29 +4,25 @@ import Swal from 'sweetalert2';
 import './styleSideNav.css';
 import moment from 'moment';
 
-export default class CreateInventory extends Component {
+export default class ProductionCreate extends Component {
 
   constructor(props){
     super(props);
     this.state={
      
        
-        cusID:"",
-        proName:"",
-        stockedDate:"",
-        scheduledDate:"",
+        slotName:"",
+        slotLocation:"",
+        slotManager:"",
+        capacity:"",
         category:"",
-        qty:"",
-        price:"",
         description:"",
-        matNameError:"",
-        cusIDError:"",
-        proNameError:"",
-        stockedDateError:"",
-        scheduledDateError:"",
+       
+        slotNameeError:"",
+        slotLocationError:"",
+        slotManagerError:"",
+        capacityError:"",
         categoryError:"",
-        qtyError:"",
-        priceError:"",
         descriptionError:""
 
    }
@@ -47,56 +43,41 @@ handleInputChange = (e) =>{
 validate= ()=>{
 
  
- let cusIDError="";
- let proNameError="";
- let stockedDateError="";
- let scheduledDateError="";
+ let slotNameeError="";
+ let slotLocationError="";
+ let slotManagerError="";
+ let capacityError="";
  let categoryError="";
- let qtyError="";
- let priceError="";
  let descriptionError="";
 
 
 
- if(!this.state.cusID){
-  cusIDError="*Customer ID is Required!"
+ if(!this.state.slotName){
+    slotNameeError="*Customer ID is Required!"
  }
- if(!this.state.proName){
-    proNameError="*Product name is Required"
+ if(!this.state.slotLocation){
+    slotLocationError="*Product name is Required"
  }
 
- if(!this.state.stockedDate){
-  stockedDateError="*Stocked date is Required"
+ if(!this.state.slotManager){
+    slotManagerError="*Stocked date is Required"
  }
-if(!this.state.scheduledDate){
-  scheduledDateError="*Scheduled date is Required"
+if(!this.state.capacity){
+    capacityError="*Scheduled date is Required"
  }
 
  if(!this.state.category){
   categoryError="*Category is Required"
 }
 
-if(!this.state.qty){
-  qtyError="*QTY is Required"
-}
 
-   else if (!this.state.qty.match('^[1-9]+[0-9]*$')){
-    qtyError= '*Please Enter a Valid QTY Range '
-} 
- if(!this.state.price){
-   priceError="*Price is Required"
- }
-
-   else if (!this.state.price.match('^[1-9]+[0-9]*$')){
-     priceError= '*Please Enter a Valid Price Range '
-   } 
-
+ 
 if(!this.state.description){
    descriptionError="Description is Required"
  }
 
- if(cusIDError||proNameError||stockedDateError||scheduledDateError||categoryError||qtyError||priceError||descriptionError){
-  this.setState({cusIDError,proNameError,stockedDateError,scheduledDateError,categoryError,qtyError,priceError,descriptionError});
+ if(slotNameeError||slotLocationError||slotManagerError||capacityError||categoryError||descriptionError){
+  this.setState({slotNameeError,slotLocationError,slotManagerError,capacityError,categoryError,descriptionError});
   return false;
 
  }  
@@ -109,18 +90,16 @@ return true;
 onSubmit =(e) =>{
     e.preventDefault();
     const isValid= this.validate();
-    const {cusID,proName,stockedDate,scheduledDate,category,qty,price,description} = this.state;
+    const {slotName,slotLocation,slotManager,capacity,category,description} = this.state;
 
     const data = {
        
     
-        cusID:cusID,
-        proName:proName,
-        stockedDate:stockedDate,
-        scheduledDate:scheduledDate,
+        slotName:slotName,
+        slotLocation:slotLocation,
+        slotManager:slotManager,
+        capacity:capacity,
         category:category,
-        qty:qty,
-        price:price,
         description:description
 
     }
@@ -130,21 +109,19 @@ onSubmit =(e) =>{
    if(isValid){
     console.log(data)
     //Post data to back end using the Http link
-    axios.post("http://localhost:8000/inventory/save", data).then((res) =>{
+    axios.post("http://localhost:8000/production/save", data).then((res) =>{
         if(res.data.success){
-       Swal.fire('Added','Inventory Card Added Successfilly','success')
+       Swal.fire('Added','Production Slot Added Successfilly','success')
             this.setState(
                 {
                  
                 
-                 cusID:"",
-                 proName:"",
-                 stockedDate:"",
-                 scheduledDate:"",
-                 category:"",
-                 qty:"",
-                 price:"",
-                 description:""
+                    slotName:"",
+                    slotLocation:"",
+                    slotManager:"",
+                    capacity:"",
+                    category:"",
+                    description:""
                 }
             )
         }
@@ -157,34 +134,30 @@ onSubmit =(e) =>{
 btnDemo = (e) => {
 e.preventDefault();
 
-const { cusID, proName, stockedDate, scheduledDate, category, qty, price, description} = this.state;
+const { slotName,slotLocation,slotManager,capacity,category,description} = this.state;
 
 const data = {
 
 
-cusID: cusID,
-proName: proName,
-stockedDate: stockedDate,
-scheduledDate: scheduledDate,
-category: category,
-qty: qty,
-price: price,
-description: description,
+    slotName: slotName,
+    slotLocation: slotLocation,
+    slotManager: slotManager,
+    capacity: capacity,
+    category: category,
+    description: description,
 }
 
 console.log(data)
 
 this.setState(
 {
- // matID: "MAT003",
 
- cusID: "CUS007",
- proName: "Coriander",
- stockedDate: "11/01/2021",
- scheduledDate: "20/10/2021",
+
+ slotName: "CUS007",
+ slotLocation: "Coriander",
+ slotManager: "efwef",
+ capacity: "100",
  category: "TEA",
- qty: "10000",
- price: "120",
  description: "Coriander seeds come from the small fruits that appear after the cilantro herb flowers. They can be harvested when green, or they can be left to brown and dry out on the plant. Pounded fresh green coriander has a bright flavor that’s ideal for dressing a salad. The dried, tan pods most often found in spice cabinets have a citrusy, floral taste that is often paired with cumin in Indian cuisine, Moroccan tagines, homemade burgers, or poaching liquor for fish.",
 }
 )
@@ -193,19 +166,17 @@ this.setState(
 btnClear = (e) => {
   e.preventDefault();
   
-  const { cusID, proName, stockedDate, scheduledDate, category, qty, price, description} = this.state;
+  const {slotName,slotLocation,slotManager,capacity,category,description} = this.state;
   
   const data = {
   
   
-  cusID: cusID,
-  proName: proName,
-  stockedDate: stockedDate,
-  scheduledDate: scheduledDate,
-  category: category,
-  qty: qty,
-  price: price,
-  description: description,
+    slotName: slotName,
+    slotLocation: slotLocation,
+    slotManager: slotManager,
+    capacity: capacity,
+    category: category,
+    description: description,
   }
   
   console.log(data)
@@ -214,14 +185,12 @@ btnClear = (e) => {
   {
    
   
-   cusID: "",
-   proName: "",
-   stockedDate: "",
-   scheduledDate: "",
-   category: "",
-   qty: "",
-   price: "",
-   description: "",
+                    slotName:"",
+                    slotLocation:"",
+                    slotManager:"",
+                    capacity:"",
+                    category:"",
+                    description:""
   }
   )
   }
@@ -244,10 +213,10 @@ btnClear = (e) => {
  <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="">Dashboard </a>
 </li>
 <li class="nav-item">
- <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/"> &#62;Inventory Cards</a>
+ <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/pro"> &#62;Production Slots Cards</a>
 </li>
 <li class="nav-item">
- <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/intadd"> &#62; Add a Inventory Card <span class="sr-only">(current)</span> </a>
+ <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/proadd"> &#62; Add a Production Slot Card <span class="sr-only">(current)</span> </a>
 </li>
 </ul>
 </div>
@@ -277,7 +246,7 @@ btnClear = (e) => {
 <div class="p-3 mb-2 text-dark  rounded-3"  style={{ backgroundColor: "#faf0e6" }}>
      <div className="col-md-8 mt-4 mx-auto">
        <center>
-     <h1 className="h3 mb-3 font-weight-normal text-info rounded-3 " style={{backgroundColor: "#0E3662" , padding: "10px"}}><b>ADD NEW INVENTORY CARD</b></h1>
+     <h1 className="h3 mb-3 font-weight-normal text-info rounded-3 " style={{backgroundColor: "#0E3662" , padding: "10px"}}><b>ADD NEW PRODUCTION SLOT CARD</b></h1>
       </center>
 
       <hr/>
@@ -294,14 +263,14 @@ btnClear = (e) => {
 
 <div class="row">
 <div class="col">
-<label style={{marginBottom:'5px'}} >Customer ID</label>
-<input type="text" class="form-control" maxlength="6" name="cusID" placeholder="Enter Customer ID"
-value={this.state.cusID}
+<label style={{marginBottom:'5px'}} >SLOT ID</label>
+<input type="text" class="form-control" maxlength="6" name="slotID" placeholder="Enter Customer ID"
+value={this.state.slotID}
 onChange={this.handleInputChange}
 required
 />
 <div style={{fontSize:15 ,color:"red"}}>
-                    {this.state.cusIDError}
+                    {this.state.slotIDError}
             </div>
 </div>
 
@@ -309,7 +278,7 @@ required
 
 <div class="col">
 <label style={{marginBottom:'5px'}} >Product Name</label>
-<input type="text" class="form-control" name="proName"  placeholder="Enter Product Name"
+<input type="text" class="form-control" name="slotID"  placeholder="Enter Product Name"
 value={this.state.proName}
 onChange={this.handleInputChange}
 required

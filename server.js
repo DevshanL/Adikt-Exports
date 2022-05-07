@@ -16,6 +16,13 @@ const requestRoutes =require('./routes/requests');
 //inventory
 const inventoryRoutes = require("./routes/inventories");
 
+
+//production
+
+
+//inventory
+const inventoryRoutes = require("./routes/inventories");
+
 //qualitycheck
 const qcRoutes = require("./routes/qualitycheck");
 
@@ -23,13 +30,21 @@ const qcRoutes = require("./routes/qualitycheck");
 
 const postedRoutes = require("./routes/posteds");
 
+
 //middleware
 
 app.use(bodyparser.json());
 app.use(cors());
 
 //route middleware
+
+app.use(inventoryRoutes);//Inventory
+
+app.use(productionRoutes);//Production
+
+
 app.use(inventoryRoutes);//Invento
+
 app.use(requestRoutes);//Customer requests
 
 app.use(qcRoutes); //Quality Check
