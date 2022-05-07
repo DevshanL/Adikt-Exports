@@ -66,7 +66,7 @@ export default class Admin extends Component {
       <center>
         <h2 class="card-title">INVENTORY REPORTS</h2>
         <p class="card-text"></p>
-        <a href="/lmo" class="btn btn-info"><i class="fas fa-arrow-alt-circle-right"></i></a>
+        <a href="/intrep" class="btn btn-info"><i class="fas fa-arrow-alt-circle-right"></i></a>
         </center>
       </div>
     </div>
@@ -81,7 +81,7 @@ export default class Admin extends Component {
       <center>
         <h2 class="card-title">PRODUCTION REPORTS</h2>
         <p class="card-text"></p>
-        <a href="/matreport" class="btn btn-info"><i class="fas fa-arrow-alt-circle-right"></i></a>
+        <a href="/prorep" class="btn btn-info"><i class="fas fa-arrow-alt-circle-right"></i></a>
         </center>
       </div>
     </div>
