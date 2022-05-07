@@ -12,60 +12,42 @@ class NavBar extends Component {
                   &nbsp;
                   &nbsp;
                   &nbsp;
-                 <img src="%PUBLIC_URL%../../white.png" class="rounded-circle" width="200" height="200"  alt=""/>
+                 
                 <br/>
                 <br/>  
-                <hr/>
-        <li>
-                    <a href="#">
-                    <i class="fas fa-sort-amount-up-alt"></i>
 
+                <li>
+                    <div className="dropdown">
+                        <button className="dropbtn">
+                        <i class="fas fa-sort-amount-up-alt"></i>
+                        &nbsp;
+                          Customer Requests</button>
+                        <div className="dropdown-content">
+                            <a href="/">Customer Requests Dashboard</a>
+                            <a href="/add">Create a new Customer Request </a>
+                            <a href="#">Reports</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                <a href="#">
+                    <i class="fab fa-product-hunt"></i>
                     &nbsp;
-                    
-                      Customer Management</a>
+                      Material Stock</a>
                 </li>
-                <hr/>
                 <li>
-                    <div className="dropdown">
-                        
-                        <i class="fas fa-cubes"></i>
-                        &nbsp;
-                          Inventory Management
-                        <div className="dropdown-content">
-                        <a href="/intdash">Inventory Dashboard</a>
-                        
-                         <a href="/intrep">Reports</a>
-                        
-                    </div>
-                    </div>
+                    <a href="#">
+                    <i class="fab fa-product-hunt"></i>
+                    &nbsp;
+                      Production</a>
                 </li>
-                <hr/>
-
-                <li>
-                    <div className="dropdown">
-                       
-                        <i class="fab fa-product-hunt"></i>
-                        &nbsp;
-                      
-                        Production Management
-                      
-                        <div className="dropdown-content">
-                        <a href="/prodash">Production Dashboard</a>
-                        <a href="/prorep">Slot Reports</a>
-                        
-                        
-                    </div>
-                    </div>
-                </li>
-                <hr/>
-               
                 <li>
                     <a href="#">
                     <i class="fas fa-file-import"></i>
                     &nbsp;
-                      Export Management</a>
+                      Import Management</a>
                 </li>
-                <hr/>
 
                 <li>
                     <a href="#">
@@ -73,31 +55,46 @@ class NavBar extends Component {
                     &nbsp;
                       Quality Check</a>
                 </li>
-                <hr/>
                 
-                
+                <li>
+                    <a href="#">
+                   
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    &nbsp; 
+                      Accounts and Profits</a>
+                </li>
                 <li>
                     <a href="#">
                     <i class="fas fa-truck"></i>
                     &nbsp;
                     Transport</a>
                 </li>
-                <hr/>
-                
                 <li>
-                    <a href="/admin">
+                    <a href="#">
+
+                    <i class="fas fa-tshirt"></i>
+                    &nbsp;
+                    Ready Made</a>
+                </li>
+                <li>
+                    <a href="#">
                       
                     <i class="fas fa-users-cog"></i>
                     &nbsp;
                       Admin</a>
                 </li>
-                <hr/>
-                
+                <li>
+                    <a href="#">
+                     
+                    <i class="fas fa-file-invoice"></i>
+                    &nbsp;
+                      Reports</a>
+                </li>
                         </ul>
                     </div>
    
-   
-   <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: "#013220" }}>
+              
+<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             {/* <!-- Image and text --> */}
   <a class="navbar-brand" href="#">
  
@@ -129,30 +126,28 @@ class NavBar extends Component {
 
 
 
-       <div class="position-absolute top-50 end-0 translate-middle-y" >
+       <div class="position-absolute top-50 end-0 translate-middle-y">
        <a  href="/matNotification"> 
-        <button type="button" class="btn btn-success position-relative"  style={{ backgroundColor: "#006a4e" }}>
+        <button type="button" class="btn btn-primary position-relative">
         <i class="fas fa-bell"></i>
   <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
     <span class="visually-hidden">New alerts</span>
   </span>
 </button>
 </a>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+
 
 </div>
 
-        
       </ul>
 
       
     </div>
   </div>
 </nav>
-</div> 
-
-
-
+</div>
 
 
 

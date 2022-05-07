@@ -1,42 +1,32 @@
 const mongoose = require('mongoose');
 
-const inventorySchema = new mongoose.Schema({
+const productionSchema = new mongoose.Schema({
 
 
     
 
-    cusID:{
+    slotName:{
         type:String,
         required:true
     },
 
-    proName:{
+    slotLocation:{
         type:String,
         required:true
     },
 
-    stockedDate:{
+    slotManager:{
         type:String,
         required:true
     },
     
-    scheduledDate:{
-        type:String,
+    capacity:{
+        type:Number,
         required:true
     },
 
     category:{
         type:String,
-        required:true
-    },
-
-    qty:{
-        type:Number,
-        required:true
-    },
-
-    price:{
-        type:Number,
         required:true
     },
 
@@ -47,4 +37,4 @@ const inventorySchema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('Inventorydb',inventorySchema)
+module.exports = mongoose.model('Productiondb',productionSchema)

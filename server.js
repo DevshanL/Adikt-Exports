@@ -1,7 +1,6 @@
 //Import express package & mongoose package by require
 const express = require('express');
 const mongoose = require('mongoose');
-
 const cors =require('cors');
 
 
@@ -16,22 +15,23 @@ const app =express();
 
 //Customer requests
 const requestRoutes =require('./routes/requests');
-
 //inventory
 const inventoryRoutes = require("./routes/inventories");
 
-//qualitycheck
-const qcRoutes = require("./routes/qualitycheck");
+//production
+const productionRoutes = require("./routes/productions");
 
 //exportdetails
 const exportDetails = require("./routes/exportDetails");
 //middleware
-
 app.use(bodyparser.json());
 app.use(cors());
 
 //route middleware
-app.use(inventoryRoutes);//Invento
+app.use(inventoryRoutes);//Inventory
+
+app.use(productionRoutes);//Production
+
 app.use(requestRoutes);//Customer requests
 app.use(qcRoutes); //Quality Check
 app.use(exportDetails);//Export Details

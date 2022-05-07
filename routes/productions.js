@@ -1,30 +1,30 @@
 const express = require('express');
 
-const Inventories = require('../models/inventory');
+const Productions = require('../models/production');
 
 const router = express.Router();
 
 //save material
-router.post('/inventory/save', (req,res) =>{
+router.post('/production/save', (req,res) =>{
 
-    let newInventory = new Inventories(req.body);
+    let newProduction = new Productions(req.body);
 
-    newInventory.save((err) =>{
+    newProduction.save((err) =>{
         if(err){
             return res.status(400).json({
                 error:err
             });
         }
         return res.status(200).json({
-            success:"Product saved successfully"
+            success:"Product slot saved successfully"
         });
     });
 });
 
 
 //getpost
-router.get('/inventory',(req,res) =>{
-    Inventories.find().exec((err,inventory) =>{
+router.get('/production',(req,res) =>{
+    Productions.find().exec((err,production) =>{
         if(err){
             return res.status(400).json({
                 error:err
@@ -32,36 +32,36 @@ router.get('/inventory',(req,res) =>{
         }
         return res.status(200).json({
             success:true,
-            existingPosts:inventory
+            existingPosts:production
         });
     });
 });
 
 //get a spesific post
-router.get('/inventory/:id',(req,res) =>{
-    let inventoryid =req.params.id;
+router.get('/production/:id',(req,res) =>{
+    let productionid =req.params.id;
 
-    Inventories.findById(inventoryid,(err,inventory) =>{
+    Productions.findById(productionid,(err,production) =>{
         if(err){
             return res.status(400).json({success:false, err});
         }
 
         return res.status(200).json({
             success:true,
-            inventory
+            production
         });
 
     });
 });
 
 //update posts
-router.put('/inventory/updateinventory/:id',(req,res)=>{
-    Inventories.findByIdAndUpdate(
+router.put('/production/updateproduction/:id',(req,res)=>{
+    Productions.findByIdAndUpdate(
         req.params.id,
         {
             $set:req.body
         },
-        (err,inventory)=>{
+        (err,production)=>{
             if(err){
                 return res.status(400).json({error:err});
             }
@@ -76,15 +76,15 @@ router.put('/inventory/updateinventory/:id',(req,res)=>{
 
 //delete post
 
-router.delete('/inventory/deleteinventory/:id',(req,res) =>{
-    Inventories.findByIdAndRemove(req.params.id).exec((err,deleteinventory) =>{
+router.delete('/production/deleteproduction/:id',(req,res) =>{
+    Productions.findByIdAndRemove(req.params.id).exec((err,deleteproduction) =>{
         
         if(err) return res.status(400).json({
             message:"Delete unsuccesfull",err
         });
 
         return res.json({
-            message:"Delete Succesfull",deleteinventory
+            message:"Delete Succesfull",deleteproduction
         });
 
     });
