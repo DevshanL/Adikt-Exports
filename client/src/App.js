@@ -7,6 +7,13 @@ import CreateInventory from './components/CreateInventory';
 import EditInventory from './components/EditInventory';
 import InventoryDetails from './components/InventoryDetails';
 import inventoryRep from './components/inventoryRep';
+import ProductionCreate from './components/ProductionCreate';
+import ProductionDash from './components/ProductionDash';
+import ProductionEdit from './components/ProductionEdit';
+import ProductionDetails from './components/ProductionDetails';
+import ProductionRep from './components/ProductionRep';
+import Home from './components/Home';
+
 
 import CreateRequest from './components/CreateRequest';
 import EditRequest from './components/EditRequest';
@@ -19,13 +26,31 @@ export default class App extends Component {
   render() {
     return (
       <BrowserRouter>  
-       <div className="page-content-wrapper">
-       <NavBar/>
+       
+
+       {window.location.pathname !== "/home"  && <NavBar/>}
+        
+        <Route path="/home" exact component={Home}></Route>
+
+        <div className="page-content-wrapper">
+
+     
        <Route path="/" exact component={InventoryDashboard}></Route>
        <Route path="/intadd" exact component={CreateInventory}></Route>
        <Route path="/intedit/:id" exact component={EditInventory}></Route>
        <Route path="/intpost/:id" exact component={InventoryDetails}></Route>
        <Route path="/intrep" exact component={inventoryRep}></Route>
+       <Route path="/procreate" exact component={ProductionCreate}></Route>
+       <Route path="/prodash" exact component={ProductionDash}></Route>
+       <Route path="/proedit/:id" exact component={ProductionEdit}></Route>
+       <Route path="/propost/:id" exact component={ProductionDetails}></Route>
+       <Route path="/prorep" exact component={ProductionRep}></Route>
+       
+
+       
+
+
+       
 
        <RequestNavbar/>
        <Route path="/" exact component={RequestList}></Route>

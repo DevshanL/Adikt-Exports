@@ -50,10 +50,9 @@ class NavBar extends Component {
                         Production Management
                       
                         <div className="dropdown-content">
-                        <a href="/matDash">Production Dashboard</a>
-                        <a href="/matDash">Production Slot Card</a>
-                        <a href="/matDash">Scheduled Products</a>
-                         <a href="">Reports</a>
+                        <a href="/prodash">Production Dashboard</a>
+                        <a href="/prorep">Slot Reports</a>
+                        
                         
                     </div>
                     </div>
