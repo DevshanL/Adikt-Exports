@@ -114,7 +114,7 @@ handleSearchArea =(e) =>{
           </tbody>  
         </table>
 
-        <button className='btn btn-success'><a href='/add' style={{textDecoration:'none',color:'white'}}>Create a New Customer Request</a></button>
+        <button className='btn btn-success'><a href='/reqadd' style={{textDecoration:'none',color:'white'}}>Create a New Customer Request</a></button>
 
 
       </div>

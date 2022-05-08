@@ -16,15 +16,26 @@ class NavBar extends Component {
                 <br/>
                 <br/>  
                 <hr/>
-        <li>
-                    <a href="#">
-                    <i class="fas fa-sort-amount-up-alt"></i>
 
-                    &nbsp;
-                    
-                      Customer Management</a>
+                <li>
+                      <div className="dropdown">
+                        
+                        <i class="fas fa-sort-amount-up-alt"></i>
+                        &nbsp;
+                          Customer Management
+                        <div className="dropdown-content">
+                        <a href="/requests">Customer requests Dashboard</a>
+                        <a href="/reqadd">Add Customer request</a>
+                         <a href="/reqrep">Customer requests reports</a>
+                         <a href="/inquiries">Customer Inquiries Dashboard</a>
+                         <a href="/inqadd">Add Customer inquiry</a>
+                         <a href="/inqrep">Customer Inquiry reports</a>
+                        
+                    </div>
+                    </div>
                 </li>
                 <hr/>
+
                 <li>
                     <div className="dropdown">
                         
@@ -99,8 +110,8 @@ class NavBar extends Component {
                         &nbsp;
                           Transort
                         <div className="dropdown-content">
-                        <a href="/dashtr">TR Dashboard</a>
-                        <a href="/hometr">TR Card</a>
+                        <a href="/hometr">TR Dashboard</a>
+                        <a href="/addtr">TR Card</a>
                        
                     </div>
                     </div>
