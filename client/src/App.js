@@ -36,6 +36,18 @@ import EditTransport from "./components/EditTransport";
 import HomeTR from "./components/HomeTR";
 import PostDetailsTR from "./components/PostDetailsTR";
 
+import CreateRequest from './components/CreateRequest';
+import EditRequest from './components/EditRequest';
+import RequestDetails from './components/RequestDetails';
+import RequestList from './components/RequestList.js';
+import RequestReports from './components/RequestReports';
+import InquiryList from './components/InquiryList';
+import CreateInquiry from './components/CreateInquiry';
+import EditInquiry from './components/EditInquiry';
+import InquiryDetails from './components/InquiryDetails';
+import InquiryReports from './components/InquiryReports';
+//import RequestNavbar from './components/RequestNavbar';
+
 
 
 export default class App extends Component {
@@ -74,6 +86,19 @@ export default class App extends Component {
        <Route path="/buyerRegisterRep" component={buyerRegisterRep}></Route>
 
 
+       <Route path="/requests" exact component={RequestList}></Route>
+       <Route path="/reqadd" component={CreateRequest}></Route>
+       <Route path="/edit/:id" component={EditRequest}></Route>
+       <Route path="/request/:id" component={RequestDetails}></Route>
+       <Route path="/reqrep" component={RequestReports}></Route>
+
+       <Route path="/inquiries" component={InquiryList}></Route>
+       <Route path="/inqadd" component={CreateInquiry}></Route>
+       <Route path="/inqedit/:id" component={EditInquiry}></Route>
+       <Route path="/inquiry/:id" component={InquiryDetails}></Route>
+       <Route path="/inqrep" component={InquiryReports}></Route>
+
+
 
 
 
@@ -87,6 +112,7 @@ export default class App extends Component {
          <Route path="/addtr" component={CreateTransport}></Route>
          <Route path="/edittr/:id" component={EditTransport}></Route>
          <Route path="/posttr/:id" component={PostDetailsTR}></Route>
+
 
        </div>
       </BrowserRouter>

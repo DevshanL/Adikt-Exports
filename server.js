@@ -15,9 +15,10 @@ const app =express();
 
 //Customer requests
 const requestRoutes =require('./routes/requests');
+//Customer Inquiries
+const inquiryRoutes =require('./routes/inquiries');
 //inventory
 const inventoryRoutes = require("./routes/inventories");
-
 //production
 const productionRoutes = require("./routes/productions");
 
@@ -43,11 +44,15 @@ app.use(inventoryRoutes);//Inventory
 app.use(productionRoutes);//Production
 
 app.use(requestRoutes);//Customer requests
+
+app.use(inquiryRoutes);//Customer inquiries
+
 // app.use(qcRoutes); //Quality Check
 app.use(exportDetails);//Export Details
 app.use(buyerRegister);//Buyer Register
 //app.use(buyerRegisterRep); //Buyer Register Report
 //app.use(exportDetailsRep);
+
 
 const PORT = 8000;
 const DB_URL = 'mongodb+srv://adikt:adikt123@adiktdb.baouy.mongodb.net/AdiktExportsDB?retryWrites=true&w=majority';
