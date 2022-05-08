@@ -54,7 +54,7 @@ export default class EditTransport extends Component {
       TransportDateError="*Transport Date is Required!"
     }
     if(!this.state.ShipmentID){
-      ShipmentIDError="*Shipment ID is Required!"
+      ShipmentIDError="*Shipment id is Required!"
     }
    
 
