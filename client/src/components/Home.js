@@ -34,7 +34,7 @@ class Home extends Component {
               <div class="card-body">
                 <h5 class="card-title">Customer Management</h5>
               
-                <a href="/orderDashboard" class="btn btn-primary">
+                <a href="/requests" class="btn btn-primary">
                 <i class="fas fa-sort-amount-up-alt"></i> 
                 </a>
               </div>
@@ -130,7 +130,7 @@ class Home extends Component {
               <div class="card-body">
                 <h5 class="card-title">Quality Check Management</h5>
                
-                <a href="/qcDash" class="btn btn-primary">
+                <a href="/homeqc" class="btn btn-primary">
                 <i class="fas fa-tasks"></i>
                 </a>
               </div>
@@ -154,7 +154,7 @@ class Home extends Component {
               <div class="card-body">
                 <h5 class="card-title">Transport Management</h5>
                
-                <a href="/RMDashbord" class="btn btn-primary">
+                <a href="/hometr" class="btn btn-primary">
                 <i class="fas fa-truck"></i>
                 </a>
               </div>
