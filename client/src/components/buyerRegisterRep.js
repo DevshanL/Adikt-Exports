@@ -6,70 +6,70 @@ import 'jspdf-autotable';
 
 
 
-const generatePDF = inventory => {
+const generatePDF = buyerRegister => {
     const doc = new jsPDF();
-    const tableColumn = ["Customer ID", "Product Name", "Stocked DATE", "Scheduled DATE", "Category", "QTY", "Price","TOTAL"];
+    const tableColumn = ["BuyerID", "Name", "Nic", "Address", "Email", "ContactNumber"];
     const tableRows = [];
   
-    inventory.map(inventory => {
-      const inventorydata = [
+    buyerRegister.map(buyerRegister => {
+      const exportData = [
         
-        inventory.cusID,
-        inventory.proName,
-        inventory.stockedDate,
-        inventory.scheduledDate,
-        inventory.category,
-        inventory.qty,
-        inventory.price,
-        inventory.price*inventory.qty,
+        buyerRegister.BuyerID,
+        buyerRegister.Name,
+        buyerRegister.Nic,
+        buyerRegister.Address,
+        buyerRegister.Email,
+        buyerRegister.ContactNumber,
+        
+       
    ];
-      tableRows.push(inventorydata);
+      tableRows.push(exportData);
     })
     doc.text("Adikt Exports", 70,8).setFontSize(13);
-    doc.text("INVENTORY SUMMURY", 14, 16).setFontSize(13); 
+    doc.text("Buyer Registration SUMMURY", 14, 16).setFontSize(13); 
     doc.autoTable(tableColumn, tableRows, { styles: { fontSize: 8, }, startY: 35 });
-    doc.save("INVENTORYSUMMARY.pdf");
+    doc.save("BuyerRegistrationSUMMARY.pdf");
   }
 
-export default class inventoryRep extends Component {
+export default class buyerRegisterRep extends Component {
 
     constructor(props){
         super(props);
     
         this.state={
-            inventory:[]
+            buyerRegister:[]
         };
     }
     
         componentDidMount(){
-            this.retriveInventory();
+            this.retriveBuyerRegister();
         }
     
-        retriveInventory(){
+        retriveBuyerRegister(){
           //get server side http module to get data to client side Http request
-       axios.get("http://localhost:8000/inventory").then(res =>{
+       axios.get("http://localhost:8000/buyer-register").then(res =>{
         if(res.data.success){
           this.setState({
-            inventory:res.data.existingPosts
+            buyerRegister:res.data.existingBuyerRegister
           });
     
-          console.log(this.state.inventory);
+          console.log(this.state.buyerRegister);
         }
     
     });
     }
 
     //filter data
-filterData(inventory,searchKey){
+filterData(buyerRegister,searchKey){
 
-    const result = inventory.filter((inventory) =>
-      //  material.matID.toLowerCase().includes(searchKey) ||
-      inventory.cusID.toLowerCase().includes(searchKey) ||
-      inventory.proName.toLowerCase().includes(searchKey)||
-      inventory.category.toLowerCase().includes(searchKey)
+    const result = buyerRegister.filter((exportDetails) =>
+     
+    buyerRegister.BuyerID.toLowerCase().includes(searchKey) ||
+    buyerRegister.Nic.toLowerCase().includes(searchKey)
+    
     )
     
-    this.setState({inventory:result})
+    this.setState({buyerRegister:result})
     
     }
   
@@ -78,10 +78,10 @@ filterData(inventory,searchKey){
   
     const searchKey= e.currentTarget.value;
   
-    axios.get("http://localhost:8000/inventory").then(res =>{
+    axios.get("http://localhost:8000/buyer-register").then(res =>{
         if(res.data.success){
   
-          this.filterData(res.data.existingPosts,searchKey)
+          this.filterData(res.data.existingBuyerRegister,searchKey)
   
         }
     });
@@ -106,7 +106,7 @@ filterData(inventory,searchKey){
              <a   style={{textDecoration:'none',color:'white'}} class="nav-link" href="/">Dashboard</a>
            </li>
            <li class="nav-item">
-             <a   style={{textDecoration:'none',color:'white'}} class="nav-link" href="/intrep">Reports</a>
+             <a   style={{textDecoration:'none',color:'white'}} class="nav-link" href="/buyerRegisterRep">Reports</a>
            </li>
         
        
@@ -126,7 +126,7 @@ filterData(inventory,searchKey){
           <input
           className="form-control "
           type="search"
-          placeholder="Search Inventory"
+          placeholder="Search "
           name="searchQuery"
           onChange={this.handleSearchArea}>
 
@@ -135,36 +135,7 @@ filterData(inventory,searchKey){
           
           </div>
           </center>
-          {/* Filter Category */}
-<div className="p-3 mb-2 text-light rounded-3" style={{ backgroundColor: "#0E3662" }} >
-          <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="" onChange={this.handleSearchArea}/>
-  <label class="form-check-label" for="exampleRadios2">
-    ALL
-  </label>
-</div>
-
-          
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="tea" onChange={this.handleSearchArea}/>
-  <label class="form-check-label" for="exampleRadios2">
-  TEA
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="coconut" onChange={this.handleSearchArea}/>
-  <label class="form-check-label" for="exampleRadios3">
-  COCONUT BASED PRODUCTS
-  </label>
-  
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="spices" onChange={this.handleSearchArea}/>
-  <label class="form-check-label" for="exampleRadios3">
-  SPICES
-  </label>
-</div>
-</div>
+         
         
           
      
@@ -175,8 +146,8 @@ filterData(inventory,searchKey){
               
               className="btn btn-info"
               
-              table="tableee"
-              filename="Inventory Summary"
+              table="tablee"
+              filename="Export Details Summary"
               sheet="tablexls"
               buttonText="Download As Excel" />
 &nbsp;
@@ -185,7 +156,7 @@ filterData(inventory,searchKey){
         type="button"
         style={{ backgroundColor: "#00000", padding: "7px" }}
         class="btn btn-info btn-sm"
-        onClick={() => generatePDF(this.state.inventory)}
+        onClick={() => generatePDF(this.state.buyerRegister)}
       >
         Download As PDF
       </button>
@@ -195,42 +166,40 @@ filterData(inventory,searchKey){
               <table  id="tableee" class="table" >
               <thead>
                   <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">InventoryID</th>
-                     
-                      <th scope="col">cusID</th>
-                      <th scope="col">proName</th>
-                      <th scope="col">sDate</th>
-                      <th scope="col">scDate</th>
-                      <th scope="col">category</th>
-                      <th scope="col">qty</th>
-                      <th scope="col">price</th>
-                      <th scope="col">Total</th>
+                    <th scope="col">#</th>
+                    <th scope="col">BuyerID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Nic</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">ContactNumber</th>
+                   
+                    
                       
                      
                   </tr>
               </thead>
               <tbody>
-                  {this.state.inventory.map((inventory,index) =>(
+                  {this.state.buyerRegister.map((buyerRegister,index) =>(
                       <tr>
                         <th scope='row'>{index+1}</th>
                         <td>
                           <b>
-                          <a href={`/intpost/${inventory._id}`} style={{textDecoration:'none',color:"#0E3662"}}>
+                          <a href={`/propost/${buyerRegister._id}`} style={{textDecoration:'none',color:"#0E3662"}}>
                          
-                          {`INT${inventory._id.substr(0,7)}`}
+                          {`PRO${buyerRegister._id.substr(0,7)}`}
                           </a>
                           </b>
                           </td>
                         
-                        <td>{inventory.cusID}</td>
-                        <td>{inventory.proName}</td>
-                        <td>{inventory.stockedDate}</td>
-                        <td>{inventory.scheduledDate}</td>
-                        <td>{inventory.category}</td>
-                        <td>{inventory.qty}</td>
-                        <td>{inventory.price}</td>
-                        <td>Rs.{inventory.price*inventory.qty}.00</td>
+                          <td>{buyerRegister.BuyerID.substring(0, 7)}</td>
+                          <td>{buyerRegister.Name}</td>
+                          <td>{buyerRegister.Nic}</td>
+                          <td>{buyerRegister.Address}</td>
+                          <td>{buyerRegister.Email}</td>
+                          <td>{buyerRegister.ContactNumber}</td>
+                     
+                     
                        
                        
     
@@ -276,7 +245,7 @@ filterData(inventory,searchKey){
     <br/>
     
     <img src="%PUBLIC_URL%../../white.png" class="rounded-circle" width="40" height="40"  alt=""/>
-      <h1>CASANOVA</h1>
+      <h1>Adikt Exports</h1>
       
       <ul>
         <li>@ Copyright reserved</li>

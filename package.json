@@ -37,6 +37,10 @@
     "react-html-table-to-excel": "^2.0.0",
     "react-router-dom": "^5.3.0",
     "sweetalert": "^2.1.2",
+
     "sweetalert2": "^11.4.10"
+
+    "uuid": "^8.3.2"
+
   }
 }

@@ -22,6 +22,18 @@ const inventoryRoutes = require("./routes/inventories");
 //production
 const productionRoutes = require("./routes/productions");
 
+//exportdetails
+const exportDetails = require("./routes/exportDetails");
+
+const buyerRegister = require("./routes/buyerRegister");
+
+//const exportDetailsRep = require("./routes/exportDetailsRep");
+
+//const buyerRegisterRep = require("./routes/buyerRegisterRep");
+
+
+
+//const buyerRegister = require('./models/buyerRegister');
 //middleware
 app.use(bodyparser.json());
 app.use(cors());
@@ -32,7 +44,15 @@ app.use(inventoryRoutes);//Inventory
 app.use(productionRoutes);//Production
 
 app.use(requestRoutes);//Customer requests
+
 app.use(inquiryRoutes);//Customer inquiries
+
+// app.use(qcRoutes); //Quality Check
+app.use(exportDetails);//Export Details
+app.use(buyerRegister);//Buyer Register
+//app.use(buyerRegisterRep); //Buyer Register Report
+//app.use(exportDetailsRep);
+
 
 const PORT = 8000;
 const DB_URL = 'mongodb+srv://adikt:adikt123@adiktdb.baouy.mongodb.net/AdiktExportsDB?retryWrites=true&w=majority';

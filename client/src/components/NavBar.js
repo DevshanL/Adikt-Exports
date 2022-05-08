@@ -43,8 +43,8 @@ class NavBar extends Component {
                         &nbsp;
                           Inventory Management
                         <div className="dropdown-content">
-                        <a href="/matDash">Inventory Dashboard</a>
-                        <a href="/">Inventory Card</a>
+                        <a href="/intdash">Inventory Dashboard</a>
+                        
                          <a href="/intrep">Reports</a>
                         
                     </div>
@@ -71,32 +71,55 @@ class NavBar extends Component {
                 <hr/>
                
                 <li>
-                    <a href="#">
-                    <i class="fas fa-file-import"></i>
-                    &nbsp;
-                      Export Management</a>
+                    <div className="dropdown">
+                        
+                        <i class="fas fa-cubes"></i>
+                        &nbsp;
+                          Export Management
+                        <div className="dropdown-content">
+                        <a href="/expDash">Export Dashboard</a>
+                        <a href="/buyerReg">Buyer Registration</a>
+                        
+                         <a href="#">Reports</a>
+                        
+                    </div>
+                    </div>
                 </li>
                 <hr/>
 
                 <li>
-                    <a href="#">
-                    <i class="fas fa-tasks"></i>
-                    &nbsp;
-                      Quality Check</a>
+                    <div className="dropdown">
+                        
+                        <i class="fas fa-cubes"></i>
+                        &nbsp;
+                          QC Management
+                        <div className="dropdown-content">
+                        <a href="/homeqc">QC Dashboard</a>
+                        <a href="/add">QC Card</a>
+                        
+                    </div>
+                    </div>
                 </li>
                 <hr/>
                 
                 
                 <li>
-                    <a href="#">
-                    <i class="fas fa-truck"></i>
-                    &nbsp;
-                    Transport</a>
+                <div className="dropdown">
+                        
+                        <i class="fas fa-cubes"></i>
+                        &nbsp;
+                          Transort
+                        <div className="dropdown-content">
+                        <a href="/hometr">TR Dashboard</a>
+                        <a href="/addtr">TR Card</a>
+                       
+                    </div>
+                    </div>
                 </li>
                 <hr/>
                 
                 <li>
-                    <a href="#">
+                    <a href="/admin">
                       
                     <i class="fas fa-users-cog"></i>
                     &nbsp;

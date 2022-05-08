@@ -4,13 +4,15 @@ import React, { Component } from "react";
 class Home extends Component {
   render() {
     return (
-      <div className="container">
+      
+      <div  style={{ backgroundColor: "#e3dac9" }} id="page-content-wrapper">
+      <div className="container" >
         <h2>
           {" "}
           <center>
             {" "}
             <br />
-            <h1 class="display-2">CASANOVA</h1>
+            <h1 class="display-2">ADIKT EXPORTS</h1>
             <br />
           </center>{" "}
         </h2>
@@ -21,7 +23,7 @@ class Home extends Component {
           <div class="col-sm-6">
             <div class="card">
               <img
-                src="%PUBLIC_URL%../../om.jpg "
+                src="%PUBLIC_URL%../../cus.jpg "
                 width="200"
                 height="275"
                 position="absolute"
@@ -30,13 +32,10 @@ class Home extends Component {
               />
                <div class="shadow bg-white rounded">
               <div class="card-body">
-                <h5 class="card-title">Order Management</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
+                <h5 class="card-title">Customer Management</h5>
+              
                 <a href="/orderDashboard" class="btn btn-primary">
-                  Order Management
+                <i class="fas fa-sort-amount-up-alt"></i> 
                 </a>
               </div>
             </div>
@@ -48,7 +47,7 @@ class Home extends Component {
           <div class="col-sm-6">
             <div class="card">
               <img
-                src="%PUBLIC_URL%../../rm.jpg "
+                src="%PUBLIC_URL%../../int.jpg "
                 width="200"
                 height="275"
                 position="absolute"
@@ -57,13 +56,10 @@ class Home extends Component {
               />
               <div class="shadow bg-white rounded">
               <div class="card-body">
-                <h5 class="card-title">Raw Meterial Stock Management</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-                <a href="/matDash" class="btn btn-primary">
-                  Raw Stock Management
+                <h5 class="card-title"> Inventory Management</h5>
+               
+                <a href="/intdash" class="btn btn-primary">
+                <i class="fas fa-cubes"></i>
                 </a>
               </div>
             </div>
@@ -75,34 +71,7 @@ class Home extends Component {
           <div class="col-sm-6">
             <div class="card">
               <img
-                src="%PUBLIC_URL%../../im.jpg "
-                width="200"
-                height="275"
-                position="absolute"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="shadow bg-white rounded">
-              <div class="card-body">
-                <h5 class="card-title">Import Management</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-                <a href="/SHdashboard" class="btn btn-primary">
-                  Import Management
-                </a>
-              </div>
-            </div>
-            </div>
-            <br />
-            <br />
-          </div>
-
-          <div class="col-sm-6">
-            <div class="card">
-              <img
-                src="%PUBLIC_URL%../../pm.jpg "
+                src="%PUBLIC_URL%../../pro.jpg "
                 width="200"
                 height="275"
                 position="absolute"
@@ -112,12 +81,9 @@ class Home extends Component {
               <div class="shadow bg-white rounded">
               <div class="card-body">
                 <h5 class="card-title">Production Management</h5>
-                <p class="card-text">
-                  Countries are chasing textile and apparel exports for numerous
-                  benefits
-                </p>
-                <a href="/PMDashboard" class="btn btn-primary">
-                  Production Management
+                
+                <a href="/prodash" class="btn btn-primary">
+                <i class="fab fa-product-hunt"></i>
                 </a>
               </div>
             </div>
@@ -129,7 +95,31 @@ class Home extends Component {
           <div class="col-sm-6">
             <div class="card">
               <img
-                src="%PUBLIC_URL%../../qm.jpg "
+                src="%PUBLIC_URL%../../exp.jpg "
+                width="200"
+                height="275"
+                position="absolute"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="shadow bg-white rounded">
+              <div class="card-body">
+                <h5 class="card-title">Export Management</h5>
+                
+                <a href="/expDash" class="btn btn-primary">
+                <i class="fas fa-file-import"></i>
+                </a>
+              </div>
+            </div>
+            </div>
+            <br />
+            <br />
+          </div>
+
+          <div class="col-sm-6">
+            <div class="card">
+              <img
+                src="%PUBLIC_URL%../../qut.jpg "
                 width="200"
                 height="275"
                 position="absolute"
@@ -139,12 +129,9 @@ class Home extends Component {
               <div class="shadow bg-white rounded">
               <div class="card-body">
                 <h5 class="card-title">Quality Check Management</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
+               
                 <a href="/qcDash" class="btn btn-primary">
-                  Quality Management
+                <i class="fas fa-tasks"></i>
                 </a>
               </div>
             </div>
@@ -156,34 +143,7 @@ class Home extends Component {
           <div class="col-sm-6">
             <div class="card">
               <img
-                src="%PUBLIC_URL%../../ready.jpg "
-                width="200"
-                height="275"
-                position="absolute"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="shadow bg-white rounded">
-              <div class="card-body">
-                <h5 class="card-title">Ready-Made Management</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-                <a href="/RMDashbord" class="btn btn-primary">
-                  Ready-Made Management
-                </a>
-              </div>
-            </div>
-            </div>
-            <br />
-            <br />
-          </div>
-
-          <div class="col-sm-6">
-            <div class="card">
-              <img
-                src="%PUBLIC_URL%../../tm.jpg "
+                src="%PUBLIC_URL%../../trn.jpg "
                 width="200"
                 height="275"
                 position="absolute"
@@ -193,12 +153,9 @@ class Home extends Component {
               <div class="shadow bg-white rounded">
               <div class="card-body">
                 <h5 class="card-title">Transport Management</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-                <a href="/TMSDash" class="btn btn-primary">
-                  Transport Management
+               
+                <a href="/RMDashbord" class="btn btn-primary">
+                <i class="fas fa-truck"></i>
                 </a>
               </div>
             </div>
@@ -207,35 +164,13 @@ class Home extends Component {
             <br />
           </div>
 
-          <div class="col-sm-6">
-            <div class="card">
-              <img
-                src="%PUBLIC_URL%../../am.jpeg "
-                width="200"
-                height="275"
-                position="absolute"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="shadow bg-white rounded">
-              <div class="card-body">
-                <h5 class="card-title">Account Management</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-                <a href="/Accountdashboard" class="btn btn-primary">
-                  Account Management
-                </a>
-              </div>
-              </div>
-            </div>
-            <br />
-            <br />
-          </div>
+       
+
+        
 
           
         </div>
+      </div>
       </div>
     );
   }
