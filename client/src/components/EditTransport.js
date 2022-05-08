@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import axios from "axios";
 import Swal from 'sweetalert2';
+import moment from 'moment';
 
 export default class EditTransport extends Component {
   
@@ -170,6 +171,7 @@ export default class EditTransport extends Component {
         <lable style={{marginBottom:'5px'}}> Transport ID</lable>
         <input type="text"
         className="form-control"
+        maxlength="5"
         name=" TransportID"
         placeholder="Enter  Transport ID"
         value={this.state.TransportID}
@@ -186,6 +188,7 @@ export default class EditTransport extends Component {
           <lable style={{marginBottom:'5px'}}>Vehicle ID</lable>
           <input type="text"
           className="form-control"
+          maxlength="8"
           name="VehicleID"
           placeholder="Enter Vehicle ID"
           value={this.state.VehicleID}
@@ -236,6 +239,7 @@ export default class EditTransport extends Component {
           placeholder="Enter Transport Date"
           value={this.state.TransportDate}
           onChange={this.handleInputChange}
+          min={moment().format("YYYY-MM-DD")}
           required
           />
            <div style={{fontSize:15 ,color:"red"}}>
@@ -247,6 +251,7 @@ export default class EditTransport extends Component {
           <lable style={{marginBottom:'5px'}}>Shipment ID</lable>
           <input type="text"
           className="form-control"
+          maxlength="6"
           name="ShipmentID"
           placeholder="Enter Shipment ID"
           value={this.state.ShipmentID}

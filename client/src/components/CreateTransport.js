@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import axios from "axios";
 import Swal from 'sweetalert2';
+import moment from 'moment';
 
 export default class CreateTransport extends Component {
   
@@ -215,6 +216,7 @@ return true;
         <lable style={{marginBottom:'5px'}}>Transport ID</lable>
         <input type="text"
         className="form-control"
+        maxlength="5"
         name="TransportID"
         placeholder="Enter Transport ID"
         value={this.state.TransportID}
@@ -230,6 +232,7 @@ return true;
           <lable style={{marginBottom:'5px'}}>Vehicle ID</lable>
           <input type="text"
           className="form-control"
+          maxlength="8"
           name="VehicleID"
           placeholder="Enter Vehicle ID"
           value={this.state.VehicleID}
@@ -245,16 +248,16 @@ return true;
           <lable style={{marginBottom:'5px'}}>Vehicle Type</lable>
           <input type="text"
           className="form-control"
-          name="Vehicle Type"
+          name="VehicleType"
           placeholder="Enter Vehicle Type"
           value={this.state.VehicleType}
           onChange={this.handleInputChange}
           required
           />
-          <div style={{fontSize:15 ,color:"red"}}>
+            <div style={{fontSize:15 ,color:"red"}}>
                            {this.state.VehicleTypeError}
-                     </div>
-            </div>
+                   </div>
+          </div>
 
           <div className="form-group" style={{marginBottom:'15px'}}>
           <lable style={{marginBottom:'5px'}}>Destination</lable>
@@ -279,6 +282,7 @@ return true;
           placeholder="Enter Transpor Date"
           value={this.state.TransportDate}
           onChange={this.handleInputChange}
+          min={moment().format("YYYY-MM-DD")}
           required
           />
           <div style={{fontSize:15 ,color:"red"}}>
@@ -290,6 +294,7 @@ return true;
           <lable style={{marginBottom:'5px'}}>Shipment ID</lable>
           <input type="text"
           className="form-control"
+          maxlength="6"
           name="ShipmentID"
           placeholder="Enter Shipment D"
           value={this.state.ShipmentID}
