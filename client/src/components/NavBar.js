@@ -60,10 +60,19 @@ class NavBar extends Component {
                 <hr/>
                
                 <li>
-                    <a href="#">
-                    <i class="fas fa-file-import"></i>
-                    &nbsp;
-                      Export Management</a>
+                    <div className="dropdown">
+                        
+                        <i class="fas fa-cubes"></i>
+                        &nbsp;
+                          Export Management
+                        <div className="dropdown-content">
+                        <a href="/expDash">Export Dashboard</a>
+                        <a href="/buyerReg">Buyer Registration</a>
+                        
+                         <a href="#">Reports</a>
+                        
+                    </div>
+                    </div>
                 </li>
                 <hr/>
 

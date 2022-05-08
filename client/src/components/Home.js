@@ -106,7 +106,7 @@ class Home extends Component {
               <div class="card-body">
                 <h5 class="card-title">Export Management</h5>
                 
-                <a href="/PMDashboard" class="btn btn-primary">
+                <a href="/expDash" class="btn btn-primary">
                 <i class="fas fa-file-import"></i>
                 </a>
               </div>
