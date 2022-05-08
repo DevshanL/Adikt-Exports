@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import axios from "axios";
 import Swal from 'sweetalert2';
+import moment from 'moment';
 
 export default class CreatePostQC extends Component {
   //Binding event handler method
@@ -223,12 +224,11 @@ return true;
 <hr/>
 
 
-        <div className="form-group" style={{marginBottom:'15px'}}>
+        
+<div class="row">
+        <div class="col">
         <lable style={{marginBottom:'5px'}}>Product ID</lable>
-        <input type="text"
-        className="form-control"
-        name="ProductID"
-        placeholder="Enter Product ID"
+        <input type="text" class="form-control" maxlength="6" name="ProductID" placeholder="Enter Product ID"
         value={this.state.ProductID}
         onChange={this.handleInputChange}
         required
@@ -236,14 +236,12 @@ return true;
         <div style={{fontSize:15 ,color:"red"}}>
                            {this.state.ProductIDError}
                    </div>
+        
         </div>
 
-        <div className="form-group" style={{marginBottom:'15px'}}>
+          <div class="col">
           <lable style={{marginBottom:'5px'}}>Buyer ID</lable>
-          <input type="text"
-          className="form-control"
-          name="BuyerID"
-          placeholder="Enter BuyerID"
+          <input type="text" class="form-control" maxlength="6" name="BuyerID"  placeholder="Enter Buyer ID"
           value={this.state.BuyerID}
           onChange={this.handleInputChange}
           required
@@ -252,38 +250,40 @@ return true;
                            {this.state.BuyerIDError}
                    </div>
           </div>
+          </div>
 
-          <div className="form-group" style={{marginBottom:'15px'}}>
+
+          <div class="row">
+          <div class="col">
           <lable style={{marginBottom:'5px'}}>Product Type</lable>
-          <input type="text"
-          className="form-control"
-          name="ProductType"
-          placeholder="Enter ProductType"
+          <input type="text" class="form-control" name="ProductType" placeholder="Enter Product Type"
           value={this.state.ProductType}
           onChange={this.handleInputChange}
           required
           />
           <div style={{fontSize:15 ,color:"red"}}>
                            {this.state.ProductTypeError}
-                     </div>
+                     
+               </div>
             </div>
 
-          <div className="form-group" style={{marginBottom:'15px'}}>
+          <div class="col">
           <lable style={{marginBottom:'5px'}}>QTY</lable>
-          <input type="text"
-          className="form-control"
-          name="QTY"
-          placeholder="Enter qty"
+          <input type="text" class="form-control" name="QTY" placeholder="Enter Qantity of the Product"
           value={this.state.QTY}
           onChange={this.handleInputChange}
           required
           />
           <div style={{fontSize:15 ,color:"red"}}>
                            {this.state.QTYError}
-                   </div>
+                   
+              </div>
+            </div>
           </div>
 
-          <div className="form-group" style={{marginBottom:'15px'}}>
+
+          <div class="row">
+          <div class="col">
           <lable style={{marginBottom:'5px'}}>Checked Date</lable>
           <input type="date"
           className="form-control"
@@ -291,6 +291,7 @@ return true;
           placeholder="Enter Checked Date"
           value={this.state.CheckedDate}
           onChange={this.handleInputChange}
+          max={moment().format("YYYY-MM-DD")}
           required
           />
           <div style={{fontSize:15 ,color:"red"}}>
@@ -298,7 +299,8 @@ return true;
                    </div>
           </div>
 
-          <div className="form-group" style={{marginBottom:'15px'}}>
+          <div class="col">
+          
           <lable style={{marginBottom:'5px'}}>Requirement Satisfication</lable>
           <input type="text"
           className="form-control"
@@ -310,10 +312,14 @@ return true;
           />
           <div style={{fontSize:15 ,color:"red"}}>
                            {this.state.RequirementSatisficationError}
-                   </div>
+                   
+              </div>
+            </div>
           </div>
 
-          <div className="form-group" style={{marginBottom:'15px'}}>
+
+          <div class="row">
+          <div class="col">
           <lable style={{marginBottom:'5px'}}>Quality Rate</lable>
           <input type="number"  min="0" max="100" step="1"
           className="form-control"
@@ -324,8 +330,10 @@ return true;
           required
           />
           <div style={{fontSize:15 ,color:"red"}}>
-                           {this.state.QualityRateDError}
+                           {this.state.QualityRateError}
                    </div>
+                 
+          </div>
           </div>
 
           <div className="form-group" style={{marginBottom:'15px'}}>
