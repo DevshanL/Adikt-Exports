@@ -62,14 +62,13 @@ handleSearchArea =(e) =>{
     return (
 
       <div id='wrapper' className='toggled'>
-      <div id="page-content-wrapper">
+      <div style={{ backgroundColor: "#e3dac9" }} id="page-content-wrapper">
         
       <div className='container-fluid'> 
-        <div className="row">
-          <div className="col-lg-9 mt-2 mb-2">
-            <h4>All Customer Requests</h4>
-          </div> 
-        </div>
+            <center>
+            <h4 className="h3 mb-3 font-weight-normal text-info rounded-3 " style={{backgroundColor: "#0E3662" , padding: "10px"}}>All Customer Requests</h4>
+            <hr/>
+            </center>
         <div className="col-lg-9 mt-2 mb-2">
           <input
             className="form-control"
@@ -79,6 +78,7 @@ handleSearchArea =(e) =>{
             onChange={this.handleSearchArea}
           />
         </div>
+
         <table className="table">
           <thead>
             <tr>
@@ -106,7 +106,7 @@ handleSearchArea =(e) =>{
                 <td>{requests.netWeight}</td>
                 <td>{requests.packageQty}</td>
                 <td>
-                  <a className='btn btn-warning' href={`/edit/${requests._id}`}><i className='fas fa-edit'></i>&nbsp;Edit</a>&nbsp;&nbsp;
+                  <a className='btn btn-warning' href={`/reqedit/${requests._id}`}><i className='fas fa-edit'></i>&nbsp;Edit</a>&nbsp;&nbsp;
                   <a className='btn btn-danger' href='#' onClick={() => this.onDelete(requests._id)}><i className='far fa-trash-alt'></i>&nbsp;Delete</a>
                 </td>
               </tr>
@@ -115,9 +115,68 @@ handleSearchArea =(e) =>{
         </table>
 
         <button className='btn btn-success'><a href='/reqadd' style={{textDecoration:'none',color:'white'}}>Create a New Customer Request</a></button>
-
+        <br/>
+        <br/>
 
       </div>
+
+       
+        {/* Footer Section */}
+        <div class="footer">
+      <div class="contain">
+
+      <br/>
+      <div class="col">
+      <h1>ABOUT US</h1>
+
+      <ul>
+      <li><i class="fas fa-phone-square"></i>&nbsp; &nbsp; Contact us</li>
+      <li><i class="fas fa-comment-alt"></i>&nbsp; &nbsp;Suggestion</li>
+      </ul>
+  
+      </div>
+
+      <div class="col">
+        <h1></h1>
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <div class="position-absolute top-50 start-50 translate-middle">
+      <br/>
+
+          <img src="%PUBLIC_URL%../../white.png" class="rounded-circle" width="40" height="40"  alt=""/>
+          <h1>CASANOVA</h1>
+        
+          <ul>
+            <li>@ Copyright reserved</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <h1></h1>
+        <ul>
+        </ul>
+      </div>
+
+      <div class="position-absolute top-50 end-0 translate-middle-y">
+        <div class="col social">
+      <h1>Help</h1>
+  
+      <ul>
+      <li><i class="fas fa-envelope"></i>&nbsp; &nbsp; <i class="fas fa-map-marker-alt"></i>&nbsp; &nbsp;<i class="fas fa-star"></i></li>
+      </ul>
+  
+        </div>
+      </div>
+      <div class="clearfix">
+      </div>
+    </div>
+    </div>
+
+
 
       </div>
       </div>

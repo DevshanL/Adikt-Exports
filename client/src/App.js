@@ -92,7 +92,7 @@ export default class App extends Component {
 
        <Route path="/requests" exact component={RequestList}></Route>
        <Route path="/reqadd" component={CreateRequest}></Route>
-       <Route path="/edit/:id" component={EditRequest}></Route>
+       <Route path="/reqedit/:id" component={EditRequest}></Route>
        <Route path="/request/:id" component={RequestDetails}></Route>
        <Route path="/reqrep" component={RequestReports}></Route>
 
