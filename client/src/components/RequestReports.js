@@ -7,7 +7,7 @@ import ReactHtmlTableToExcel from 'react-html-table-to-excel'
 
 const generatePDF = requests =>{
   const doc =new jsPDF();
-  const tableColumn =["Request ID", "Customer Name", "Date", "Product Name"];
+  const tableColumn =["Request ID", "Customer Name", "Date","Category","Product Name", "Net weight", "Package Qty"];
   const tableRows =[];
 
   requests.map(requests=>{
@@ -15,7 +15,10 @@ const generatePDF = requests =>{
       requests.requestID,
       requests.customerName,
       requests.date,
+      requests.category,
       requests.productName,
+      requests.netWeight,
+      requests.packageQty,
     ];
 
     tableRows.push(requestsData);
