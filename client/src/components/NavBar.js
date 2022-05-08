@@ -90,8 +90,8 @@ class NavBar extends Component {
                         &nbsp;
                           Transort
                         <div className="dropdown-content">
-                        <a href="/dashtr">TR Dashboard</a>
-                        <a href="/hometr">TR Card</a>
+                        <a href="/hometr">TR Dashboard</a>
+                        <a href="/addtr">TR Card</a>
                        
                     </div>
                     </div>
