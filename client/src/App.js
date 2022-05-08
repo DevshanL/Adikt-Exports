@@ -24,6 +24,7 @@ import InquiryList from './components/InquiryList';
 import CreateInquiry from './components/CreateInquiry';
 import EditInquiry from './components/EditInquiry';
 import InquiryDetails from './components/InquiryDetails';
+import InquiryReports from './components/InquiryReports';
 //import RequestNavbar from './components/RequestNavbar';
 
 
@@ -62,7 +63,7 @@ export default class App extends Component {
        <Route path="/inqadd" component={CreateInquiry}></Route>
        <Route path="/inqedit/:id" component={EditInquiry}></Route>
        <Route path="/inquiry/:id" component={InquiryDetails}></Route>
-       <Route path="/inqrep" component={InquiryList}></Route>
+       <Route path="/inqrep" component={InquiryReports}></Route>
 
        </div>
       </BrowserRouter>

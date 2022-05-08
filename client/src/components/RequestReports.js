@@ -21,7 +21,7 @@ const generatePDF = requests =>{
     tableRows.push(requestsData);
   })
 
-  doc.text("Adikt Exports", 70.8).setFontSize(13);
+  doc.text("Adikt Exports", 70,8).setFontSize(13);
   doc.text("Requests Summary", 14 ,16).setFontSize(13);
   doc.autoTable(tableColumn, tableRows, {styles: { fontSize: 8, }, startY: 35});
   doc.save("RequestsSummary.pdf");
