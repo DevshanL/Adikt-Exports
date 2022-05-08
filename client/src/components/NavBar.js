@@ -68,19 +68,33 @@ class NavBar extends Component {
                 <hr/>
 
                 <li>
-                    <a href="#">
-                    <i class="fas fa-tasks"></i>
-                    &nbsp;
-                      Quality Check</a>
+                    <div className="dropdown">
+                        
+                        <i class="fas fa-cubes"></i>
+                        &nbsp;
+                          QC Management
+                        <div className="dropdown-content">
+                        <a href="/add">QC Dashboard</a>
+                        <a href="/">QC Card</a>
+                        
+                    </div>
+                    </div>
                 </li>
                 <hr/>
                 
                 
                 <li>
-                    <a href="#">
-                    <i class="fas fa-truck"></i>
-                    &nbsp;
-                    Transport</a>
+                <div className="dropdown">
+                        
+                        <i class="fas fa-cubes"></i>
+                        &nbsp;
+                          Transoort
+                        <div className="dropdown-content">
+                        <a href="/dashtr">TR Dashboard</a>
+                        <a href="/hometr">TR Card</a>
+                       
+                    </div>
+                    </div>
                 </li>
                 <hr/>
                 
