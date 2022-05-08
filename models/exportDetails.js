@@ -1,26 +1,22 @@
+const uuid = require('uuid');
 const mongoose = require ('mongoose');
+const exportDetailsSchema = new mongoose.Schema({
 
-const postedSchema = new mongoose.Schema({
-
+    ShipmentID:{
+        type:String,
+        default: uuid.v4(),
+    },
     ProductID:{
         type:String,
         required: true
     },
-    ProductName:{
-        type:String,
-        required:true
-    },
-    ShipmentID:{
-        type:String,
-        required:true
-    
-    },
+   
     Date:{
         type:String,
         required:true
     },
     UnitPrice:{
-        type:Number,
+        type:String,
         required:true
 
     },
@@ -28,13 +24,16 @@ const postedSchema = new mongoose.Schema({
         type:Number,
         required:true
     },
+
+    Type:{
+        type:String,
+        required:true
+    
+    },
     Description:{
         type:String,
         required:true
     }
-
-
-
 });
 
-module.exports= mongoose.model('PostedDB', postedSchema);
+module.exports= mongoose.model('ExportDetailsDB', exportDetailsSchema);

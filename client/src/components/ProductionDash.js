@@ -83,10 +83,10 @@ handleSearchArea = (e) =>{
   <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
        <li class="nav-item active">
-         <a   style={{textDecoration:'none',color:'white'}} class="nav-link" href="">Dashboard</a>
+         <a   style={{textDecoration:'none',color:'white'}} class="nav-link" href="/">Dashboard</a>
        </li>
       <li class="nav-item">
-        <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/"> &#62; Production Slot Cards  <span class="sr-only">(current)</span> </a>
+        <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/prodash"> &#62; Production Slot Cards  <span class="sr-only">(current)</span> </a>
       </li>
    
     </ul>
@@ -99,7 +99,7 @@ handleSearchArea = (e) =>{
 <hr/>
 
 <center>
-     <h1 className="h3 mb-3 font-weight-normal text-info rounded-3 " style={{backgroundColor: "#0E3662" , padding: "10px"}}><b>Production Slots</b></h1>
+     <h1 className="h3 mb-3 font-weight-normal text-info rounded-3 " style={{backgroundColor: "#0E3662" , padding: "10px"}}><b>PRODUCTION SLOTS</b></h1>
       </center>
       <hr/>
       <center>

@@ -153,10 +153,10 @@ this.setState(
 {
 
 
- slotName: "CUS007",
- slotLocation: "Coriander",
- slotManager: "efwef",
- capacity: "100",
+ slotName: "SN001",
+ slotLocation: "E1",
+ slotManager: "Sithira Ranasinghe",
+ capacity: "1000",
  category: "TEA",
  description: "Coriander seeds come from the small fruits that appear after the cilantro herb flowers. They can be harvested when green, or they can be left to brown and dry out on the plant. Pounded fresh green coriander has a bright flavor that’s ideal for dressing a salad. The dried, tan pods most often found in spice cabinets have a citrusy, floral taste that is often paired with cumin in Indian cuisine, Moroccan tagines, homemade burgers, or poaching liquor for fish.",
 }
@@ -210,13 +210,13 @@ btnClear = (e) => {
 <div class="collapse navbar-collapse" id="navbarNav">
 <ul class="navbar-nav">
 <li class="nav-item active">
- <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="">Dashboard </a>
+ <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/">Dashboard </a>
 </li>
 <li class="nav-item">
- <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/pro"> &#62;Production Slots Cards</a>
+ <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/prodash"> &#62;Production Slots Cards</a>
 </li>
 <li class="nav-item">
- <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/proadd"> &#62; Add a Production Slot Card <span class="sr-only">(current)</span> </a>
+ <a  style={{textDecoration:'none',color:'white'}} class="nav-link" href="/procreate"> &#62; Add a Production Slot Card <span class="sr-only">(current)</span> </a>
 </li>
 </ul>
 </div>
@@ -319,7 +319,7 @@ required
 <div class="row">
 <div class="col">
 <label style={{marginBottom:'5px'}} >Capacity</label>
-<input type="number" class="form-control" name="capacity" placeholder="Enter Capacity"
+<input type="number"  min="0" class="form-control" name="capacity" placeholder="Enter Capacity"
 value={this.state.capacity}
 onChange={this.handleInputChange}
 

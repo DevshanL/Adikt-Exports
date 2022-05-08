@@ -22,6 +22,12 @@ const inventoryRoutes = require("./routes/inventories");
 //production
 const productionRoutes = require("./routes/productions");
 
+//qualitycheck
+const qcRoutes = require("./routes/qualitycheck");
+
+//transport management
+const transportRoutes = require("./routes/transports");
+
 //middleware
 app.use(bodyparser.json());
 app.use(cors());
@@ -32,7 +38,20 @@ app.use(inventoryRoutes);//Inventory
 app.use(productionRoutes);//Production
 
 app.use(requestRoutes);//Customer requests
+
+
+app.use(qcRoutes); //Quality Check
+app.use(transportRoutes); // transport management
+
 app.use(inquiryRoutes);//Customer inquiries
+
+// app.use(qcRoutes); //Quality Check
+app.use(exportDetails);//Export Details
+app.use(buyerRegister);//Buyer Register
+//app.use(buyerRegisterRep); //Buyer Register Report
+//app.use(exportDetailsRep);
+
+
 
 const PORT = 8000;
 const DB_URL = 'mongodb+srv://adikt:adikt123@adiktdb.baouy.mongodb.net/AdiktExportsDB?retryWrites=true&w=majority';
