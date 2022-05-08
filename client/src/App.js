@@ -16,6 +16,19 @@ import Admin from './components/Admin';
 
 
 
+import CreatePostQC from "./components/CreatepostQC";
+import EditPostQC from "./components/EditPostQC";
+import HomeQC from "./components/HomeQC";
+import NavBar from "./components/NavBar";
+import PostDetailsQC from "./components/PostDetailsQC";
+
+import CreateTransport from "./components/CreateTransport";
+import EditTransport from "./components/EditTransport";
+import HomeTR from "./components/HomeTR";
+import PostDetailsTR from "./components/PostDetailsTR";
+
+
+
 export default class App extends Component {
   render() {
     return (
@@ -40,6 +53,21 @@ export default class App extends Component {
        <Route path="/propost/:id" exact component={ProductionDetails}></Route>
        <Route path="/prorep" exact component={ProductionRep}></Route>
        <Route path="/admin" exact component={Admin}></Route>
+
+
+
+
+
+
+       <Route path="/homeqc" exact component={HomeQC}></Route>
+         <Route path="/add" component={CreatePostQC}></Route>
+         <Route path="/edit/:id" component={EditPostQC}></Route>
+         <Route path="/post/:id" component={PostDetailsQC}></Route>
+
+         <Route path="/hometr" exact component={HomeTR}></Route>
+         <Route path="/addtr" component={CreateTransport}></Route>
+         <Route path="/edittr/:id" component={EditTransport}></Route>
+         <Route path="/posttr/:id" component={PostDetailsTR}></Route>
 
        </div>
       </BrowserRouter>
