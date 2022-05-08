@@ -74,8 +74,8 @@ class NavBar extends Component {
                         &nbsp;
                           QC Management
                         <div className="dropdown-content">
-                        <a href="/add">QC Dashboard</a>
-                        <a href="/">QC Card</a>
+                        <a href="/homeqc">QC Dashboard</a>
+                        <a href="/add">QC Card</a>
                         
                     </div>
                     </div>
