@@ -88,7 +88,7 @@ class NavBar extends Component {
                         
                         <i class="fas fa-cubes"></i>
                         &nbsp;
-                          Transoort
+                          Transort
                         <div className="dropdown-content">
                         <a href="/dashtr">TR Dashboard</a>
                         <a href="/hometr">TR Card</a>
