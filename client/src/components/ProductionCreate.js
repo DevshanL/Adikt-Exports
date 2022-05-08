@@ -319,7 +319,7 @@ required
 <div class="row">
 <div class="col">
 <label style={{marginBottom:'5px'}} >Capacity</label>
-<input type="number" class="form-control" name="capacity" placeholder="Enter Capacity"
+<input type="number"  min="0" class="form-control" name="capacity" placeholder="Enter Capacity"
 value={this.state.capacity}
 onChange={this.handleInputChange}
 
