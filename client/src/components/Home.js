@@ -32,6 +32,9 @@ class Home extends Component {
               />
                <div class="shadow bg-white rounded">
               <div class="card-body">
+
+                 {/*Customer Home Navigation*/}
+
                 <h5 class="card-title">Customer Management</h5>
               
                 <a href="/requests" class="btn btn-primary">
