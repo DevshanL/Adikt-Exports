@@ -28,7 +28,7 @@ import buyerRegisterRep from './components/buyerRegisterRep';
 import CreatePostQC from "./components/CreatepostQC";
 import EditPostQC from "./components/EditPostQC";
 import HomeQC from "./components/HomeQC";
-import NavBar from "./components/NavBar";
+
 import PostDetailsQC from "./components/PostDetailsQC";
 
 import CreateTransport from "./components/CreateTransport";

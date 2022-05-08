@@ -153,10 +153,10 @@ this.setState(
 {
 
 
- slotName: "CUS007",
- slotLocation: "Coriander",
- slotManager: "efwef",
- capacity: "100",
+ slotName: "SN001",
+ slotLocation: "E1",
+ slotManager: "Sithira Ranasinghe",
+ capacity: "1000",
  category: "TEA",
  description: "Coriander seeds come from the small fruits that appear after the cilantro herb flowers. They can be harvested when green, or they can be left to brown and dry out on the plant. Pounded fresh green coriander has a bright flavor that’s ideal for dressing a salad. The dried, tan pods most often found in spice cabinets have a citrusy, floral taste that is often paired with cumin in Indian cuisine, Moroccan tagines, homemade burgers, or poaching liquor for fish.",
 }
