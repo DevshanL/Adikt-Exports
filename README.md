@@ -1,5 +1,5 @@
 # Adikt-Exports
-###The system that we choose to implement is an Export Management system. The name of the project is 
+#The system that we choose to implement is an Export Management system. The name of the project is 
 ‘AdIKT Exports’. In this system, there are seven main functions to implement. Those functions are; 
 Customer Management, Inquiry Management, Inventory Management, Production Management, Export 
 Management, Quality Check Management and Transport Management. The overall process of this system 
